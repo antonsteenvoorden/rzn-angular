@@ -1,0 +1,5 @@
+<div *ngIf="hotel">
+<h2>Hotel details</h2>
+<span class="badge">{{ hotel.id }}</span> {{ hotel.name }}
+</div>
+<button md-button (click)="gotoHotels()">back</button>
