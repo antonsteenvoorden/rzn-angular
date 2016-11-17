@@ -1,4 +1,32 @@
 # RznAngular
+We use this file structure: 
+```
+Reference:
+https://johnpapa.net/angular-2-styles/
+
+ index.html                      // Starting page
+  app/                            // Main app folder
+    main.ts                       // bootstrap here
+    app.component.css
+    app.component.html
+    app.component.ts              // Root component for the app (e.g. AppComponent)
+    heroes/                       // Feature folder
+      heroes.ts                   // Barrel module for the feature
+      heroes.component.ts         // Router component (e.g. HeroesComponent)
+      hero-list.component.css
+      hero-list.component.html
+      hero-list.component.ts      // list of heroes (e.g. HeroListComponent)
+      hero-detail.component.css
+      hero-detail.component.html
+      hero-detail.component.ts    // hero details  (e.g. HeroDetailComponent)
+      hero.service.ts             // A feature specific service  (e.g. HeroService)
+    shared/                       // Shared features across the app
+      shared.ts                   // Barrel module for shared features
+      logger.service.ts           // Example shared service (e.g. LoggerService)
+      spinner.component.ts        // Example shared component  (e.g. SpinnerComponent)
+      config.ts   
+      
+      ```
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.19-3.
 
