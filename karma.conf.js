@@ -33,8 +33,9 @@ module.exports = function (config) {
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
+    /* Autowatch was true, en singlerun false */
     autoWatch: false,
     browsers: ['Chrome'],
-    singleRun: false
+    singleRun: true
   });
 };
