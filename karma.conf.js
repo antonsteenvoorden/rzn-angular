@@ -34,8 +34,8 @@ module.exports = function (config) {
     colors: true,
     logLevel: config.LOG_INFO,
     /* Autowatch was true, en singlerun false */
-    autoWatch: false,
+    autoWatch: true,
     browsers: ['Chrome'],
-    singleRun: true
+    singleRun: false
   });
 };
