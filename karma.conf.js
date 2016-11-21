@@ -36,6 +36,6 @@ module.exports = function (config) {
     /* Autowatch was true, en singlerun false */
     autoWatch: true,
     browsers: ['Chrome'],
-    singleRun: false
+    singleRun: true
   });
 };
