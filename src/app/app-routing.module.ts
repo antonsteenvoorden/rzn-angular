@@ -6,8 +6,10 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { BookingsComponent }  from './bookings/bookings.component';
 import { HotelsComponent }    from './hotels/hotels.component';
+import {PageNotFoundComponent} from "./page-not-found/page-not-found.component";
 
 const appRoutes: Routes = [
+  { path: '', component: PageNotFoundComponent }, 
   { path: 'bookings', component: BookingsComponent },
   { path: 'hotels', component: HotelsComponent }
 ];

@@ -1,6 +1,6 @@
 <h2>Hotels</h2>
 <ul class="items">
-  <li *ngFor="let hotel of hotels | async"
+  <li class="is-link" *ngFor="let hotel of hotels | async"
       (click)="onSelect(hotel)">
     <span class="badge">{{ hotel.id }}</span> {{ hotel.name }}
   </li>

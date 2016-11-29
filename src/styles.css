@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+/*@import '~@angular/material/core/theming/prebuilt/deeppurple-amber.css';*/
+body {
+  height:100%;
+}
+.main-content{
+  margin-top:1%;
+  margin-bottom:1%;
+  width:75%;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.is-link:hover {
+  cursor:pointer;
+}

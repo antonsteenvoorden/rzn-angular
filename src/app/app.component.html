@@ -1,6 +1,39 @@
-<h1>Angular Router</h1>
-<nav>
-  <a routerLink="/bookings" routerLinkActive="active">Bookings</a>
-  <a routerLink="/hotels" routerLinkActive="active">Hotels</a>
-</nav>
-<router-outlet></router-outlet>
+<md-sidenav-layout fullscreen>
+
+  <md-sidenav #sidenav mode="side">
+    <md-list>
+      <md-toolbar>Je moeder</md-toolbar>
+      <md-list-item>
+        <button md-button routerLink="/bookings" routerLinkActive="active">
+          <i class="material-icons">book</i>
+          <span class="app-toolbar-filler"></span>
+          Bookings
+        </button>
+      </md-list-item>
+      <md-list-item>
+        <button md-button routerLink="/hotels" routerLinkActive="active">
+          <i class="material-icons">hotel</i>
+          <span class="app-toolbar-filler"></span>
+          Hotels
+        </button>
+      </md-list-item>
+    </md-list>
+  </md-sidenav>
+
+  <md-toolbar color="primary">
+    <button class="app-icon-button" (click)="sidenav.toggle()">
+      <i class="material-icons app-toolbar-menu">menu</i>
+    </button>
+
+    {{title}}
+
+    <span class="app-toolbar-filler"></span>
+    <button class="app-icon-button">
+      <i class="material-icons app-toolbar-menu">account_circle</i>
+    </button>
+  </md-toolbar>
+
+  <md-card layout-align="center center" class="main-content">
+    <router-outlet></router-outlet>
+  </md-card>
+</md-sidenav-layout>
