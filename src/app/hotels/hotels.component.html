@@ -1,7 +1,9 @@
 <h2>Hotels</h2>
-<ul class="items">
-  <li class="is-link" *ngFor="let hotel of hotels | async"
+<md-list>
+  <md-list-item class="is-link" *ngFor="let hotel of hotels | async"
       (click)="onSelect(hotel)">
-    <span class="badge">{{ hotel.id }}</span> {{ hotel.name }}
-  </li>
-</ul>
+    <img md-list-avatar src="{{hotel.imageUrl}}" alt="{{hotel.imageAlt}}">
+    <h3 md-line>{{ hotel.name }}</h3>
+    <p md-line> {{hotel.description }}</p>
+  </md-list-item>
+</md-list>
