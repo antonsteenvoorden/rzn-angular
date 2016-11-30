@@ -7,8 +7,8 @@ describe('rzn-angular App', function() {
     page = new RznAngularPage();
   });
 
-  it('should display message saying app works', () => {
+  it('should display message saying Angular Router', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('app works!');
+    expect(page.getParagraphText()).toEqual('Angular Router');
   });
 });
