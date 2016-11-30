@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import 'rxjs/add/operator/switchMap';
-import { Observable } from 'rxjs/Observable';
+// import { Observable } from 'rxjs/Observable';
 
-import  { Hotel, HotelsService} from "../hotels.service";
+import { Hotel, HotelsService} from '../hotels.service';
 
 @Component({
   selector: 'app-hotel-detail',
@@ -11,7 +11,7 @@ import  { Hotel, HotelsService} from "../hotels.service";
   styleUrls: ['./hotel-detail.component.css']
 })
 export class HotelDetailComponent implements OnInit {
-  hotel:Hotel;
+  hotel: Hotel;
 
   constructor(
     private route: ActivatedRoute,

@@ -13,10 +13,10 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { BookingsComponent } from './bookings/bookings.component.ts';
 import { MaterialModule } from '@angular/material';
 
-//https://github.com/angular/material2/blob/master/GETTING_STARTED.md
-//https://angular.io/docs/ts/latest/guide/router.html
+// https://github.com/angular/material2/blob/master/GETTING_STARTED.md
+// https://angular.io/docs/ts/latest/guide/router.html
 
-//TODO: checkout example https://angular.io/resources/live-examples/router/ts/plnkr.html
+// TODO: checkout example https://angular.io/resources/live-examples/router/ts/plnkr.html
 
 @NgModule({
   declarations: [

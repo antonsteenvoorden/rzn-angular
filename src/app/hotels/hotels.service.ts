@@ -19,7 +19,7 @@ let hotelsPromise = Promise.resolve(HOTELS);
 export class HotelsService {
 
   constructor() { }
-  getHotels(){ return hotelsPromise; }
+  getHotels() { return hotelsPromise; }
   getHotel(id: number | string) {
     return hotelsPromise
       .then(hotels => hotels.find(hotel => hotel.id === +id));
