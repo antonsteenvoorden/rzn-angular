@@ -31,6 +31,6 @@ export class HotelDetailComponent implements OnInit {
     let hotelId = this.hotel ? this.hotel.id : null;
     // Pass along the hero id if available
     // so that the HeroList component can select that hero.
-    this.router.navigate(['/hotels', { id: hotelId, foo: 'foo' }]);
+    this.router.navigate(['/hotels', { id: hotelId }]);
   }
 }

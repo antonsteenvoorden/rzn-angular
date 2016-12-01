@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, HostBinding, Input, Directive } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
@@ -18,11 +18,40 @@ import { MaterialModule } from '@angular/material';
 
 //TODO: checkout example https://angular.io/resources/live-examples/router/ts/plnkr.html
 
+
+@Directive({
+  selector:'[layout]'
+})
+export class LayoutDirective{
+  @Input() layout:string;
+  @HostBinding('style.display') display = 'flex';
+
+  @HostBinding('style.flex-direction')
+  get direction(){
+    return (this.layout === 'column') ? 'column':'row';
+  }
+}
+@Directive({
+  selector:'[flex]'
+})
+export class FlexDirective{
+  @Input() shrink:number = 1;
+  @Input() grow:number = 1;
+  @Input() flex:string;
+
+  @HostBinding('style.flex')
+  get style(){
+    return `${this.grow} ${this.shrink} ${this.flex === '' ? '0':this.flex}%`;
+  }
+}
+
 @NgModule({
   declarations: [
     AppComponent,
     PageNotFoundComponent,
-    BookingsComponent
+    BookingsComponent,
+    FlexDirective,
+    LayoutDirective
   ],
   imports: [
     BrowserModule,
@@ -30,6 +59,7 @@ import { MaterialModule } from '@angular/material';
     HttpModule,
     AppRoutingModule,
     HotelsModule,
+
     MaterialModule.forRoot()
   ],
   bootstrap: [AppComponent]
