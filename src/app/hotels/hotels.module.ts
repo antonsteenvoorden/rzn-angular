@@ -10,12 +10,13 @@ import { HotelDetailComponent } from './hotel-detail/hotel-detail.component';
 import { HotelsRoutingModule } from './hotels-routing.module';
 
 import { HotelsService } from './hotels.service';
-
+import { MaterialModule } from '@angular/material';
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
-    HotelsRoutingModule
+    HotelsRoutingModule,
+    MaterialModule.forRoot()
   ],
   declarations: [
     HotelsComponent,
