@@ -10,8 +10,11 @@ import { AppComponent } from './app.component';
 import { HotelsModule } from './hotels/hotels.module';
 
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { BookingsComponent } from './bookings/bookings.component.ts';
+import { BookingsComponent } from './bookings/bookings.component';
 import { MaterialModule } from '@angular/material';
+import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
+import { HomeComponent } from './home/home.component';
 
 //https://github.com/angular/material2/blob/master/GETTING_STARTED.md
 //https://angular.io/docs/ts/latest/guide/router.html
@@ -51,7 +54,10 @@ export class FlexDirective{
     PageNotFoundComponent,
     BookingsComponent,
     FlexDirective,
-    LayoutDirective
+    LayoutDirective,
+    RegisterComponent,
+    LoginComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

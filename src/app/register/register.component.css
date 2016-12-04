@@ -1,0 +1,20 @@
+.basic {
+  padding: 0;
+}
+.basic md-card-content {
+  padding: 16px;
+}
+.full-width {
+  width: 100%;
+}
+
+.card {
+  margin: 16px;
+  width: 40%;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.centered {
+  text-align: right;
+}
