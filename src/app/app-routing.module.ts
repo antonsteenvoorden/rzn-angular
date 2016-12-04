@@ -6,12 +6,18 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { BookingsComponent }  from './bookings/bookings.component';
 import { HotelsComponent }    from './hotels/hotels.component';
-import {PageNotFoundComponent} from "./page-not-found/page-not-found.component";
+import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
+import { RegisterComponent } from "./register/register.component";
+import { LoginComponent } from "./login/login.component";
+import { HomeComponent } from "./home/home.component";
 
 const appRoutes: Routes = [
-  { path: '', component: PageNotFoundComponent }, 
+  { path: '', component: HomeComponent },
   { path: 'bookings', component: BookingsComponent },
-  { path: 'hotels', component: HotelsComponent }
+  { path: 'hotels', component: HotelsComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'home', component: HomeComponent }
 ];
 
 @NgModule({

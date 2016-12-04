@@ -1,39 +1,40 @@
 <md-sidenav-layout fullscreen>
+  <md-sidenav #start>
+    <md-toolbar>Navigate to</md-toolbar>
+    <md-nav-list>
+      <a *ngFor="let navItem of navItems"
+         md-list-item
+         (click)="start.close()"
+         [routerLink]="[navItem.route]">
+        {{navItem.name}}
+      </a>
 
-  <md-sidenav #sidenav mode="side">
-    <md-list>
-      <md-toolbar>Navigeren</md-toolbar>
-      <md-list-item>
-        <button md-button routerLink="/bookings" routerLinkActive="active">
-          <i class="material-icons">book</i>
-          <span class="app-toolbar-filler"></span>
-          Bookings
-        </button>
-      </md-list-item>
-      <md-list-item>
-        <button md-button routerLink="/hotels" routerLinkActive="active">
-          <i class="material-icons">hotel</i>
-          <span class="app-toolbar-filler"></span>
-          Hotels
-        </button>
-      </md-list-item>
-    </md-list>
+      <hr>
+    </md-nav-list>
+    <button md-button (click)="start.close()">CLOSE</button>
   </md-sidenav>
 
-  <md-toolbar color="primary">
-    <button class="app-icon-button" (click)="sidenav.toggle()">
-      <i class="material-icons app-toolbar-menu">menu</i>
-    </button>
+  <div>
 
-    {{title}}
+    <md-toolbar color="primary">
 
-    <span class="app-toolbar-filler"></span>
-    <button class="app-icon-button">
-      <i class="material-icons app-toolbar-menu">account_circle</i>
-    </button>
-  </md-toolbar>
+      <button md-icon-button (click)="start.open()">
+        <md-icon class="md-24">menu</md-icon>
+      </button>
 
-  <!--<md-card layout-align="center center" class="main-content">-->
-    <router-outlet></router-outlet>
-  <!--</md-card>-->
+      <div class="app-toolbar-menu" layout="row" layout-align="start center" flex>
+        <h3 class="register-link" routerLink="" routerLinkActive="active"> {{title}} </h3>
+        <span flex></span>
+        <button class="app-icon-button">
+          <i class="material-icons app-toolbar-menu">account_circle</i>
+        </button>
+        <h3 class="register-link" routerLink="/login" routerLinkActive="active">Login or register</h3>
+      </div>
+    </md-toolbar>
+
+    <div #root="$implicit" dir="ltr">
+      <router-outlet></router-outlet>
+    </div>
+
+  </div>
 </md-sidenav-layout>

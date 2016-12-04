@@ -1,0 +1,24 @@
+.basic {
+  padding: 0;
+}
+.basic md-card-content {
+  padding: 16px;
+}
+.full-width {
+  width: 100%;
+}
+
+.register-link {
+  cursor: pointer;
+}
+
+.card {
+  margin: 16px;
+  width: 25%;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.centered {
+  text-align: right;
+}
