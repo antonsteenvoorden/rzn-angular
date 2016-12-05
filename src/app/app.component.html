@@ -6,6 +6,7 @@
          md-list-item
          (click)="start.close()"
          [routerLink]="[navItem.route]">
+        <div innerHTML="{{ navItem.icon }}"></div> &nbsp;
         {{navItem.name}}
       </a>
 

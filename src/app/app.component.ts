@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -10,9 +10,9 @@ export class AppComponent {
   isDarkTheme: boolean = false;
 
   navItems = [
-    {name: 'Home', route: 'home'},
-    {name: 'Bookings', route: 'bookings'},
-    {name: 'Hotels', route: 'hotels'},
+    {icon: '<i class="material-icons">home</i>', name: 'Home', route: 'home'},
+    {icon: '<i class="material-icons">book</i>', name: 'Bookings', route: 'bookings'},
+    {icon: '<i class="material-icons">hotel</i>', name: 'Hotels', route: 'hotels'},
   ];
 
 }
