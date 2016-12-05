@@ -4,7 +4,9 @@ export class Hotel {
   public id: number;
   public name: string;
   public description:string;
-  public imageUrl:string;
+  public longitude: number;
+  public latitude: number;
+  public imageLocation:string;
   public imageAlt:string;
 
   constructor(id: number,
@@ -13,10 +15,12 @@ export class Hotel {
     this.id = id;
     this.name = name;
     this.description = description;
-    this.imageUrl = "https://media-cdn.tripadvisor.com/media/photo-s/07/9c/8b/8b/hotel-yurbban-trafalgar.jpg";
+    this.longitude = parseInt("51.678418");
+    this.latitude = parseInt("7.809007");
+    this.imageLocation = "https://media-cdn.tripadvisor.com/media/photo-s/07/9c/8b/8b/hotel-yurbban-trafalgar.jpg";
     this.imageAlt = "Afbeelding van een hotel";
   }
-              // imageUrl:string,
+              // imageLocation:string,
               // imageAlt:string) { }
 }
 

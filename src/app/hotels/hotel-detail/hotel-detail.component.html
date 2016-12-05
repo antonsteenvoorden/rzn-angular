@@ -11,8 +11,10 @@
         <img src="{{hotel.imageUrl}}" alt="{{hotel.imageAlt}}"/>
       </div>
       <div>
-        <img src="{{hotel.imageUrl}}" alt="{{hotel.imageAlt}}"/>
-        <p> {{hotel.description }}</p>
+        <sebm-google-map [latitude]="7.809007" [longitude]="7.809007">
+          <sebm-google-map-marker [latitude]="7.809007" [longitude]="7.809007">
+          </sebm-google-map-marker>
+        </sebm-google-map>
       </div>
     </div>
   </div>

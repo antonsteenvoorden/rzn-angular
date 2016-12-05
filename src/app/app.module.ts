@@ -15,7 +15,7 @@ import { MaterialModule } from '@angular/material';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
-
+import { AgmCoreModule } from 'angular2-google-maps/core';
 // https://github.com/angular/material2/blob/master/GETTING_STARTED.md
 // https://angular.io/docs/ts/latest/guide/router.html
 
@@ -65,8 +65,10 @@ export class FlexDirective{
     HttpModule,
     AppRoutingModule,
     HotelsModule,
-
-    MaterialModule.forRoot()
+    MaterialModule.forRoot(),
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyDArtIeaIwOBi-9UtMlrP36h2kGGwkyS6A'
+    })
   ],
   bootstrap: [AppComponent]
 })

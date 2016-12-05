@@ -12,13 +12,15 @@ import { HotelPipe } from './hotels.pipe';
 
 import { HotelsService } from './hotels.service';
 import { MaterialModule } from '@angular/material';
+import {AgmCoreModule} from "angular2-google-maps/core/core-module";
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     HotelsRoutingModule,
-    MaterialModule.forRoot()
+    MaterialModule.forRoot(),
+    AgmCoreModule
   ],
   declarations: [
     HotelsComponent,

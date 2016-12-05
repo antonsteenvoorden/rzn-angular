@@ -14,3 +14,7 @@ body {
 .is-link:hover {
   cursor:pointer;
 }
+
+.sebm-google-map-container {
+  height: 300px;
+}
