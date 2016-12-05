@@ -17,7 +17,7 @@
       <table style="width: 100%" cellspacing="0">
         <tr>
           <td><h4>First name</h4>
-            <md-input placeholder="" style="width: 100%"></md-input>
+            <md-input type="text" placeholder="" style="width: 100%"></md-input>
           </td>
           <td><h4>Last name</h4>
             <md-input placeholder="" style="width: 100%"></md-input>
@@ -70,7 +70,7 @@
     <br><br>
     <div layout="row" layout-align="start center" flex>
       <span flex></span>
-      <button class="centered" md-raised-button color="primary">Register now</button>
+      <button (click)="createAccount()" class="centered" md-raised-button color="primary">Register now</button>
     </div>
   </md-card-content>
 </md-card>
