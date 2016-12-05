@@ -1,7 +1,8 @@
 <div class="main-content">
   <h2>Hotels</h2>
+  <md-input (ngModel)="query"></md-input>
   <md-grid-list cols="3" gutterSize="25px">
-    <md-grid-tile layout-wrap *ngFor="let hotel of hotels | async" (click)="onSelect(hotel)" class="is-link">
+    <md-grid-tile layout-wrap *ngFor="let hotel of hotels | async | HotelPipe:query " (click)="onSelect(hotel)" class="is-link">
       <md-card  flex layout-fill>
         <md-card-title>{{hotel.name}}</md-card-title>
         <img md-card-image src="{{hotel.imageUrl}}">
