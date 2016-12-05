@@ -11,6 +11,8 @@ import { RegisterComponent } from "./register/register.component";
 import { LoginComponent } from "./login/login.component";
 import { HomeComponent } from "./home/home.component";
 
+import { LoggedInGuard } from './logged-in.guard';
+
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'bookings', component: BookingsComponent },
@@ -18,6 +20,7 @@ const appRoutes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent }
+  // TEST { path: 'register', component: RegisterComponent, canActivate: [LoggedInGuard] }
 ];
 
 @NgModule({
