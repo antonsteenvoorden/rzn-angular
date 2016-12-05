@@ -10,9 +10,9 @@ export class AppComponent {
   isDarkTheme: boolean = false;
 
   navItems = [
-    {icon: '<i class="material-icons">home</i>', name: 'Home', route: 'home'},
-    {icon: '<i class="material-icons">book</i>', name: 'Bookings', route: 'bookings'},
-    {icon: '<i class="material-icons">hotel</i>', name: 'Hotels', route: 'hotels'},
+    {icon: '<md-icon>home</md-icon>', name: 'Home', route: 'home'},
+    {icon: '<md-icon>book</md-icon>', name: 'Bookings', route: 'bookings'},
+    {icon: '<md-icon>hotel</md-icon>', name: 'Hotels', route: 'hotels'},
   ];
 
 }

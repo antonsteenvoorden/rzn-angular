@@ -1,8 +1,15 @@
 <div class="main-content">
   <h2>Hotels</h2>
+  <div style="flex-direction: column">
+    <!--TODO: Icon IN THE FIELD! Nu is die niet goed gealigned-->
+    <md-icon>search</md-icon>
+    <md-input #query (keyup)="0" placeholder="Zoek een hotel">
+    </md-input>
+  </div>
   <md-grid-list cols="3" gutterSize="25px">
-    <md-grid-tile layout-wrap *ngFor="let hotel of hotels | async" (click)="onSelect(hotel)" class="is-link">
-      <md-card  flex layout-fill>
+    <md-grid-tile layout-wrap *ngFor="let hotel of hotels | async | hotelPipe:query.value" (click)="onSelect(hotel)"
+                  class="is-link">
+      <md-card flex layout-fill>
         <md-card-title>{{hotel.name}}</md-card-title>
         <img md-card-image src="{{hotel.imageUrl}}">
         <md-card-content>

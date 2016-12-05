@@ -4,7 +4,6 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 import 'rxjs/add/operator/switchMap';
 import { Observable } from 'rxjs/Observable';
 
-
 @Component({
   selector: 'app-hotels',
   templateUrl: './hotels.component.html',
