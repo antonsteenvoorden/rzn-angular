@@ -16,8 +16,11 @@ import {RegisterComponent} from './register/register.component';
 import {LoginComponent} from './login/login.component';
 import {HomeComponent} from './home/home.component';
 
-import {LoggedInGuard} from './logged-in.guard';
-import {UserService} from './user.service';
+import {LoggedInGuard} from './guards/logged-in.guard';
+import {UserService} from './services/user.service';
+import {Configuration} from './app.constants';
+import {RegisterService} from './services/register.service';
+import {User} from './models/user';
 
 // https://github.com/angular/material2/blob/master/GETTING_STARTED.md
 // https://angular.io/docs/ts/latest/guide/router.html
@@ -68,10 +71,9 @@ export class FlexDirective {
     HttpModule,
     AppRoutingModule,
     HotelsModule,
-
     MaterialModule.forRoot()
   ],
-  providers: [UserService, LoggedInGuard],
+  providers: [UserService, LoggedInGuard, Configuration, RegisterService, User],
   bootstrap: [AppComponent]
 })
 export class AppModule {

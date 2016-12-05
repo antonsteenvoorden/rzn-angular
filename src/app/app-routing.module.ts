@@ -11,7 +11,7 @@ import { RegisterComponent } from "./register/register.component";
 import { LoginComponent } from "./login/login.component";
 import { HomeComponent } from "./home/home.component";
 
-import { LoggedInGuard } from './logged-in.guard';
+import { LoggedInGuard } from './guards/logged-in.guard';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },

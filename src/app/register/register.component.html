@@ -4,23 +4,29 @@
     <form>
       <h4>Email</h4>
       <p>
-        <md-input class="full-width" placeholder="" value=""></md-input>
+        <md-input [(ngModel)]="user.email" name='email' value={{user.email}} class="full-width" placeholder=""
+                  value=""></md-input>
       </p>
       <h4>Password</h4>
       <p>
-        <md-input type="password" class="full-width" placeholder="" value=""></md-input>
+        <md-input type="password" [(ngModel)]="user.password" name='email' value={{user.password}} class="full-width"
+                  placeholder=""
+                  value=""></md-input>
       </p>
       <h4>Repeat password</h4>
       <p>
-        <md-input type="password" class="full-width" placeholder="" value=""></md-input>
+        <md-input type="password" [(ngModel)]="user.repeatPassword" name='email' value={{user.repeatPassword}}
+                  class="full-width" placeholder="" value=""></md-input>
       </p>
       <table style="width: 100%" cellspacing="0">
         <tr>
           <td><h4>First name</h4>
-            <md-input type="text" placeholder="" style="width: 100%"></md-input>
+            <md-input [(ngModel)]="user.firstName" name='firstName' value={{user.firstName}} placeholder=""
+                      style="width: 100%"></md-input>
           </td>
           <td><h4>Last name</h4>
-            <md-input placeholder="" style="width: 100%"></md-input>
+            <md-input [(ngModel)]="user.lastName" name='lastName' value={{user.lastName}} placeholder=""
+                      style="width: 100%"></md-input>
           </td>
         </tr>
       </table>
@@ -70,7 +76,7 @@
     <br><br>
     <div layout="row" layout-align="start center" flex>
       <span flex></span>
-      <button (click)="createAccount()" class="centered" md-raised-button color="primary">Register now</button>
+      <button (click)="testGet()" class="centered" md-raised-button color="primary">Register now</button>
     </div>
   </md-card-content>
 </md-card>

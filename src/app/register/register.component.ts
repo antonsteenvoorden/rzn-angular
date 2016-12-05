@@ -3,8 +3,8 @@
  */
 
 import {Component, OnInit} from '@angular/core';
-import {RegisterService} from './register.service'
-import {Observable} from "rxjs/Rx";
+import {RegisterService} from '../services/register.service'
+import {User} from '../models/user'
 
 @Component({
   selector: 'app-register',
@@ -13,17 +13,33 @@ import {Observable} from "rxjs/Rx";
 })
 
 export class RegisterComponent implements OnInit {
+  getData: String;
+  postData: String;
 
-  public register;
+  constructor(private registerService: RegisterService, private user: User) {
 
-  constructor() {
   }
 
+  testUser() {
+    console.log(this.user.email);
+  }
 
-  createAccount() {
+  testGet() {
+    this.registerService.getSomething().subscribe(
+      data => this.getData = JSON.stringify(data),
+      error => alert(error),
+      () => console.log('Finished.')
+    );
+  }
+
+  testPost() {
+    this.registerService.postSomething().subscribe(
+      data => this.postData = JSON.stringify(data),
+      error => alert(error),
+      () => console.log('Finished.')
+    );
   }
 
   ngOnInit() {
   }
-
 }
