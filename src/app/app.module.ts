@@ -21,6 +21,7 @@ import {UserService} from './services/user.service';
 import {Configuration} from './app.constants';
 import {RegisterService} from './services/register.service';
 import {User} from './models/user';
+import {AgmCoreModule} from 'angular2-google-maps/core';
 
 // https://github.com/angular/material2/blob/master/GETTING_STARTED.md
 // https://angular.io/docs/ts/latest/guide/router.html
@@ -32,8 +33,10 @@ import {User} from './models/user';
   selector: '[layout]'
 })
 export class LayoutDirective {
-  @Input() layout: string;
-  @HostBinding('style.display') display = 'flex';
+  @Input()
+  layout:string;
+  @HostBinding('style.display')
+  display = 'flex';
 
   @HostBinding('style.flex-direction')
   get direction() {
@@ -44,9 +47,12 @@ export class LayoutDirective {
   selector: '[flex]'
 })
 export class FlexDirective {
-  @Input() shrink: number = 1;
-  @Input() grow: number = 1;
-  @Input() flex: string;
+  @Input()
+  shrink:number = 1;
+  @Input()
+  grow:number = 1;
+  @Input()
+  flex:string;
 
   @HostBinding('style.flex')
   get style() {
@@ -71,7 +77,10 @@ export class FlexDirective {
     HttpModule,
     AppRoutingModule,
     HotelsModule,
-    MaterialModule.forRoot()
+    MaterialModule.forRoot(),
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyDArtIeaIwOBi-9UtMlrP36h2kGGwkyS6A'
+    })
   ],
   providers: [UserService, LoggedInGuard, Configuration, RegisterService, User],
   bootstrap: [AppComponent]

@@ -10,7 +10,14 @@ body {
   margin-left:auto;
   margin-right:auto;
 }
-
+.center {
+  margin-left:auto;
+  margin-right:auto;
+}
 .is-link:hover {
   cursor:pointer;
+}
+
+.sebm-google-map-container {
+  height: 300px;
 }
