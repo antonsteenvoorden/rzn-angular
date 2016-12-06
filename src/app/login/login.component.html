@@ -2,21 +2,20 @@
   <md-toolbar color="primary">Login</md-toolbar>
   <md-card-content>
 
-    <form>
+    <form #loginForm="ngForm" (ngSubmit)="login(loginForm.value)">
       <h4>Email</h4>
-      <md-input class="full-width" placeholder="" value=""></md-input>
+      <md-input class="full-width" placeholder="email" value="" name="email" ngModel></md-input>
       <h4>Password</h4>
-      <md-input type="password" class="full-width" placeholder="" value=""></md-input>
-    </form>
+      <md-input type="password" class="full-width" placeholder="wachtwoord" value="" name="password" ngModel></md-input>
     <br>
-    <div layout="row" layout-align="start center" flex>
-      <span flex></span>
-      <button class="centered" md-raised-button color="primary">Login now</button>
+    <div class="center">
+      <button type="submit" md-raised-button color="primary">Login</button>
     </div>
+    </form>
 
     <div layout="row" layout-align="start center" flex>
       <span flex></span>
-      <p class="register-link" routerLink="/register" routerLinkActive="register">Or register</p>
+      <p class="register-link" routerLink="/register" routerLinkActive="register">Heb je nog geen account? Registreer hier</p>
     </div>
 
   </md-card-content>
