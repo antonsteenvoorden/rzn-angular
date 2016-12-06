@@ -1,0 +1,18 @@
+<div class="main-content">
+  <md-toolbar color="accent">Mijn Profiel</md-toolbar>
+  <md-card>
+    <div class="center" layout-align="center center">
+      <form class="center" #loginForm="ngForm" (ngSubmit)="login(loginForm.value)">
+        <h4>Email</h4>
+        <md-input class="full-width" placeholder="email" value="" name="email" ngModel></md-input>
+        <h4>Password</h4>
+        <md-input type="password" class="full-width" placeholder="wachtwoord" value="" name="password"
+                  ngModel></md-input>
+        <br>
+        <div class="center">
+          <button type="submit" md-raised-button color="primary">Update</button>
+        </div>
+      </form>
+    </div>
+  </md-card>
+</div>

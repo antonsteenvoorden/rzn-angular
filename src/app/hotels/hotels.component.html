@@ -1,15 +1,16 @@
 <div class="main-content">
-  <h2>Hotels</h2>
+  <md-toolbar color="accent">Hotels</md-toolbar>
   <div style="flex-direction: column">
     <!--TODO: Icon IN THE FIELD! Nu is die niet goed gealigned-->
     <md-icon>search</md-icon>
-    <md-input #query (keyup)="0" placeholder="Zoek een hotel">
+    <md-input class="search-bar" #query (keyup)="0" placeholder="Zoek een hotel">
     </md-input>
   </div>
   <md-grid-list cols="3" gutterSize="25px">
-    <md-grid-tile layout-wrap *ngFor="let hotel of hotels | async | hotelPipe:query.value" (click)="onSelect(hotel)"
-                  class="is-link">
-      <md-card flex layout-fill>
+    <md-grid-tile *ngFor="let hotel of hotels | async | hotelPipe:query.value" (click)="onSelect(hotel)"
+                  class="is-link with-shadow">
+
+      <md-card layout>
         <md-card-title>{{hotel.name}}</md-card-title>
         <img md-card-image src="{{hotel.imageLocation}}">
         <md-card-content>

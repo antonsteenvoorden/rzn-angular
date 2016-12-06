@@ -6,21 +6,23 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { BookingsComponent }  from './bookings/bookings.component';
 import { HotelsComponent }    from './hotels/hotels.component';
-import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
-import { RegisterComponent } from "./register/register.component";
-import { LoginComponent } from "./login/login.component";
-import { HomeComponent } from "./home/home.component";
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
+import { HomeComponent } from './home/home.component';
 
 import { LoggedInGuard } from './guards/logged-in.guard';
+import {MyProfileComponent} from './my-profile/my-profile.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'bookings', component: BookingsComponent },
+  { path: 'bookings', component: BookingsComponent, canActivate: [LoggedInGuard] },
   { path: 'hotels', component: HotelsComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'home', component: HomeComponent }
-  // TEST { path: 'register', component: RegisterComponent, canActivate: [LoggedInGuard] }
+  { path: 'home', component: HomeComponent },
+  { path: 'my-profile', component: MyProfileComponent, canActivate: [LoggedInGuard] },
+  { path: '*', component: PageNotFoundComponent}
 ];
 
 @NgModule({

@@ -6,7 +6,8 @@
          md-list-item
          (click)="start.close()"
          [routerLink]="[navItem.route]">
-        <md-icon>{{ navItem.icon }}</md-icon> &nbsp;
+        <md-icon>{{ navItem.icon }}</md-icon>
+        &nbsp;
         {{navItem.name}}
       </a>
 
@@ -29,7 +30,12 @@
         <button class="app-icon-button">
           <i class="material-icons app-toolbar-menu">account_circle</i>
         </button>
-        <h4 class="register-link" routerLink="/login" routerLinkActive="active">Login or register</h4>
+        <div *ngIf="!userService.isLoggedIn()">
+          <h4 class="register-link" routerLink="/login" routerLinkActive="active">Login or register</h4>
+        </div>
+        <div *ngIf="userService.isLoggedIn()">
+          <h4 class="register-link" routerLink="/my-profile" routerLinkActive="active">Mijn profiel</h4>
+        </div>
       </div>
     </md-toolbar>
 

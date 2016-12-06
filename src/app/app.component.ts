@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {UserService} from './services/user.service';
 
 @Component({
   selector: 'app-root',
@@ -9,6 +10,8 @@ export class AppComponent {
   title = 'TravelPlanner';
   isDarkTheme: boolean = false;
 
+  constructor(private userService: UserService){}
+  
   navItems = [
     {icon: 'home', name: 'Home', route: 'home'},
     {icon: 'book', name: 'Bookings', route: 'bookings'},
