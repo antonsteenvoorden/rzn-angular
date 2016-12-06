@@ -9,13 +9,20 @@ import { AppComponent } from './app.component';
 
 import { HotelsModule } from './hotels/hotels.module';
 
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { BookingsComponent } from './bookings/bookings.component';
-import { MaterialModule } from '@angular/material';
-import { RegisterComponent } from './register/register.component';
-import { LoginComponent } from './login/login.component';
-import { HomeComponent } from './home/home.component';
+import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
+import {BookingsComponent} from './bookings/bookings.component';
+import {MaterialModule} from '@angular/material';
+import {RegisterComponent} from './register/register.component';
+import {LoginComponent} from './login/login.component';
+import {HomeComponent} from './home/home.component';
+
+import {LoggedInGuard} from './guards/logged-in.guard';
+import {UserService} from './services/user.service';
+import {Configuration} from './app.constants';
+import {RegisterService} from './services/register.service';
+import {User} from './models/user';
 import { AgmCoreModule } from 'angular2-google-maps/core';
+
 // https://github.com/angular/material2/blob/master/GETTING_STARTED.md
 // https://angular.io/docs/ts/latest/guide/router.html
 
@@ -23,28 +30,28 @@ import { AgmCoreModule } from 'angular2-google-maps/core';
 
 
 @Directive({
-  selector:'[layout]'
+  selector: '[layout]'
 })
-export class LayoutDirective{
-  @Input() layout:string;
+export class LayoutDirective {
+  @Input() layout: string;
   @HostBinding('style.display') display = 'flex';
 
   @HostBinding('style.flex-direction')
-  get direction(){
-    return (this.layout === 'column') ? 'column':'row';
+  get direction() {
+    return (this.layout === 'column') ? 'column' : 'row';
   }
 }
 @Directive({
-  selector:'[flex]'
+  selector: '[flex]'
 })
-export class FlexDirective{
-  @Input() shrink:number = 1;
-  @Input() grow:number = 1;
-  @Input() flex:string;
+export class FlexDirective {
+  @Input() shrink: number = 1;
+  @Input() grow: number = 1;
+  @Input() flex: string;
 
   @HostBinding('style.flex')
-  get style(){
-    return `${this.grow} ${this.shrink} ${this.flex === '' ? '0':this.flex}%`;
+  get style() {
+    return `${this.grow} ${this.shrink} ${this.flex === '' ? '0' : this.flex}%`;
   }
 }
 
@@ -70,6 +77,7 @@ export class FlexDirective{
       apiKey: 'AIzaSyDArtIeaIwOBi-9UtMlrP36h2kGGwkyS6A'
     })
   ],
+  providers: [UserService, LoggedInGuard, Configuration, RegisterService, User],
   bootstrap: [AppComponent]
 })
 export class AppModule {
