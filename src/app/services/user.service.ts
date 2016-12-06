@@ -6,34 +6,37 @@
 
 import { Injectable } from '@angular/core';
 import { Http, Headers } from '@angular/http';
-import { User } from '../models/user';
+import { Configuration } from '../app.constants';
 
 @Injectable()
 export class UserService {
   private loggedIn = false;
 
-  constructor(private http: Http) {
+  constructor(private http: Http, private configuration: Configuration) {
     this.loggedIn = !!localStorage.getItem('auth_token');
   }
 
-  login(email, password) {
+  login(user) {
+    console.log('user service obtained user', user);
+    let email = user.email;
+    let password = user.password;
     let headers = new Headers();
-    headers.append('Content-Type', 'application/json');
+    headers.append('Content-Type', 'application/x-www-form-urlencoded');
 
-    return this.http
-      .post(
-        '/login',
+    this.http
+      .post(this.configuration.ServerWithApiUrl+
+        'login',
         JSON.stringify({ email, password }),
         { headers }
       )
       .map(res => res.json())
-      .map((res) => {
+      .subscribe((res) => {
         if (res.success) {
-          localStorage.setItem('auth_token', res.auth_token);
+          localStorage.setItem('auth_token', JSON.stringify(res.auth_token));
           this.loggedIn = true;
         }
 
-        return res.success;
+        return res;
       });
   }
 
