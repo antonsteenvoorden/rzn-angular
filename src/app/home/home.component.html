@@ -1,7 +1,7 @@
 <div class="main-content">
+  <md-toolbar color="accent">Waar wil je naartoe?</md-toolbar>
   <md-card layout-align="center center" class="main-content">
     <form class="center" #locationForm="ngForm" (ngSubmit)="findHotels(locationForm.value)">
-      <h4>Waar wil je naartoe?</h4>
       <md-input placeholder="typ een land" value="" name="location" ngModel></md-input>
       <button type="submit" md-raised-button color="accent">Zoek hotels</button>
     </form>

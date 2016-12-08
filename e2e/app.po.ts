@@ -2,7 +2,7 @@ import { browser, element, by } from 'protractor';
 
 export class RznAngularPage {
   navigateTo() {
-    return browser.get('/');
+    return browser.get('/home');
   }
 
   getParagraphText() {
