@@ -1,29 +1,26 @@
-<md-card class="main-content">
-  <button md-raised-button (click)="gotoHotels()">
-    <i class="material-icons">dashboard</i> Terug naar overzicht
-  </button>
+<button md-raised-button (click)="gotoHotels()">
+  <i class="material-icons">dashboard</i> Terug naar overzicht
+</button>
+<div *ngIf="hotel" class="main-content">
+  <md-toolbar color="accent">{{ hotel.name }}</md-toolbar>
+  <md-card>
+      <div class="image-container">
+        <img src="{{hotel.imageLocation}}" alt="{{hotel.imageAlt}}"/>
+        <p>
+          {{ hotel.description }}
+        </p>
+      </div>
 
-  <div *ngIf="hotel" class="main-content">
-    <h2>{{ hotel.name }}</h2>
+    <md-card-content>
+      <md-toolbar color="accent">Bekijk waar {{ hotel.name }} ligt!</md-toolbar>
+      <div class="sebm-google-map-container">
+        <sebm-google-map [latitude]="7.809007" [longitude]="7.809007">
+          <sebm-google-map-marker [latitude]="7.809007" [longitude]="7.809007">
+          </sebm-google-map-marker>
+        </sebm-google-map>
+      </div>
 
-    <div class="main-content">
-      <img src="{{hotel.imageLocation}}" alt="{{hotel.imageAlt}}"/>
-      <p>
-        {{ hotel.description }}
-      </p>
-    </div>
-
-
-
-    <div class="main-content">
-      <sebm-google-map [latitude]="7.809007" [longitude]="7.809007">
-        <sebm-google-map-marker [latitude]="7.809007" [longitude]="7.809007">
-        </sebm-google-map-marker>
-      </sebm-google-map>
-    </div>
-
-  </div>
-
-</md-card>
-
+    </md-card-content>
+  </md-card>
+</div>
 

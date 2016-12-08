@@ -2,26 +2,28 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule, HostBinding, Input, Directive} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
-
+import {HotelsModule} from './hotels/hotels.module';
 import {AppRoutingModule} from './app-routing.module';
+import {AgmCoreModule} from 'angular2-google-maps/core';
+//MODULES HIERBOVEN
 
 import {AppComponent} from './app.component';
-
-import {HotelsModule} from './hotels/hotels.module';
-
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 import {BookingsComponent} from './bookings/bookings.component';
 import {MaterialModule} from '@angular/material';
 import {RegisterComponent} from './register/register.component';
 import {LoginComponent} from './login/login.component';
 import {HomeComponent} from './home/home.component';
+import { MyProfileComponent } from './my-profile/my-profile.component';
+//ALLECOMPONENTS HIERBOVEN
 
 import {LoggedInGuard} from './guards/logged-in.guard';
 import {UserService} from './services/user.service';
 import {Configuration} from './app.constants';
 import {RegisterService} from './services/register.service';
 import {User} from './models/user';
-import {AgmCoreModule} from 'angular2-google-maps/core';
+//SERVICES HIERBOVEN
+
 
 // https://github.com/angular/material2/blob/master/GETTING_STARTED.md
 // https://angular.io/docs/ts/latest/guide/router.html
@@ -69,7 +71,8 @@ export class FlexDirective {
     LayoutDirective,
     RegisterComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    MyProfileComponent
   ],
   imports: [
     BrowserModule,
