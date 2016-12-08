@@ -9,25 +9,41 @@ declare var temperature;
 
 @Component({
   selector: 'rzn-weather',
-  template: '{{temperature}}'
+  templateUrl: './weather.component.html'
 })
 export class WeatherComponent implements OnInit{
   @Input() hotel: Hotel;
-  temperature: string;
+  temperature: number;
+  humidity: number;
+  windspeed: number;
+  description: string;
 
   constructor(private service:WeatherService) {
   }
 
   ngOnInit() {
-    console.log(this);
-    this.setTemperature();
-
+      this.getFromWeatherApi();
   }
-  setTemperature(){
+
+  getFromWeatherApi(){
     this.service.getWeather(this.hotel)
       .then((results) => {
         console.log('results in component is ', results);
-        this.temperature = JSON.stringify(results);
-      });
+        this.handleResults(results);
+      })
+      .catch((err)=> {
+        console.log(err);
+      })
+  }
+
+  handleResults(results){
+    this.temperature = this.kelvinToCelsiusRounded(results.main.temp);
+    this.humidity = results.main.humidity;
+    this.windspeed = results.wind.speed;
+    this.description = results.weather[0].description;
+  }
+
+  kelvinToCelsiusRounded(temperature){
+    return Math.round((temperature - 273)*100)/100;
   }
 }
