@@ -5,7 +5,7 @@ import {HttpModule} from '@angular/http';
 import {HotelsModule} from './hotels/hotels.module';
 import {AppRoutingModule} from './app-routing.module';
 import {AgmCoreModule} from 'angular2-google-maps/core';
-//MODULES HIERBOVEN
+// MODULES HIERBOVEN
 
 import {AppComponent} from './app.component';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
@@ -14,17 +14,17 @@ import {MaterialModule} from '@angular/material';
 import {RegisterComponent} from './register/register.component';
 import {LoginComponent} from './login/login.component';
 import {HomeComponent} from './home/home.component';
-import { MyProfileComponent } from './my-profile/my-profile.component';
-
-//ALLECOMPONENTS HIERBOVEN
+import {MyProfileComponent} from './my-profile/my-profile.component';
+// COMPONENTS HIERBOVEN
 
 import {LoggedInGuard} from './guards/logged-in.guard';
 import {UserService} from './services/user.service';
 import {Configuration} from './app.constants';
-import {RegisterService} from './services/register.service';
-import { WeatherService } from './weather/weather.service';
+import {RegisterService} from './register/register.service';
+import {WeatherService} from './weather/weather.service';
+// SERVICES HIERBOVEN
+
 import {User} from './models/user';
-//SERVICES HIERBOVEN
 
 
 // https://github.com/angular/material2/blob/master/GETTING_STARTED.md
@@ -38,7 +38,7 @@ import {User} from './models/user';
 })
 export class LayoutDirective {
   @Input()
-  layout:string;
+  layout: string;
   @HostBinding('style.display')
   display = 'flex';
 
@@ -52,11 +52,11 @@ export class LayoutDirective {
 })
 export class FlexDirective {
   @Input()
-  shrink:number = 1;
+  shrink: number = 1;
   @Input()
-  grow:number = 1;
+  grow: number = 1;
   @Input()
-  flex:string;
+  flex: string;
 
   @HostBinding('style.flex')
   get style() {

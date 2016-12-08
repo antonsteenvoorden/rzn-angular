@@ -1,7 +1,7 @@
 /**
  * Created by Zairon on 05-Dec-16.
  */
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 
 @Injectable()
 export class User {

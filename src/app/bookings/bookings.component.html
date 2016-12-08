@@ -1,22 +1,32 @@
 <div class="main-content">
   <md-toolbar color="accent">Bookings</md-toolbar>
 
-  <md-card *ngFor="let booking of bookings" layout-align="center center" class="card">
-    <md-card-header>
-      <md-card-title class="title">{{booking.name}}</md-card-title>
-      <md-card-subtitle>{{booking.adres}}</md-card-subtitle>
-    </md-card-header>
+  <md-card *ngFor="let booking of bookings" class="booking-card">
     <img class="img-box" md-card-image src="assets/hotel.jpg">
-    <md-card-content class="content">
-      <div class="left">
-        <p>Booking ID:</p>
-        <p>Info:</p>
-      </div>
-
-      <div class="middle">
-        <p>{{booking.id}}</p>
-        <p>{{booking.info}}</p>
-      </div>
+    <md-card-title class="title">{{booking.name}}</md-card-title>
+    <md-card-content class="hotel-info-left">
+      <p>Booking ID:</p>
+      <p>City:</p>
+      <p>Travelers:</p>
+      <p>Rooms:</p>
     </md-card-content>
+    <md-card-content class="hotel-info-right">
+      <p>{{booking.id}}</p>
+      <p>{{booking.city}}</p>
+      <p>{{booking.travelers}}</p>
+      <p>{{booking.rooms}}</p>
+    </md-card-content>
+
+    <div class="dots"></div>
+
+    <div class="hotel-info-checkin">
+      <p class="check"><b>Check-in</b></p>
+      <p>{{booking.checkIn}}</p>
+    </div>
+    <div class="hotel-info-checkout">
+      <p class="check"><b>Check-out</b></p>
+      <p>{{booking.checkOut}}</p>
+    </div>
   </md-card>
+
 </div>

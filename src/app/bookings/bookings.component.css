@@ -3,7 +3,7 @@
   width: 150px;
   height: 150px;
   padding-left: 30px;
-  padding-top: 10px;
+  padding-top: 24px;
   float: left;
 }
 
@@ -16,37 +16,58 @@
   width: 500px;
 }
 
-.card {
-  margin: 16px;
+.booking-card {
+  margin-top: 18px;
   margin-bottom: 30px;
-  padding: 10px;
-  width: 60%;
   margin-left: auto;
   margin-right: auto;
   overflow: auto;
+  layout-align: "center center";
 }
 
 .title {
   font-size: 25px;
 }
 
-.left {
+.hotel-info-left {
   float: left;
   text-align: right;
-  padding-right: 8px;
+  margin-left: 50px;
+  font-size: 15px;
 }
 
-.middle {
+.hotel-info-right {
   float: left;
   text-align: left;
+  font-size: 15px;
+  width: 327px;
+  border-right: thick dotted #2196f3;
 }
 
-.right {
-  float: right;
-  font-size: 26px;
+.hotel-info-checkin {
+  float: left;
+  text-align: center;
+  font-size: 23px;
+  margin-left: 150px;
+}
+
+.hotel-info-checkout {
+  float: left;
+  text-align: center;
+  font-size: 23px;
+  margin-left: 50px;
+}
+
+.title {
+  font-size: 30px;
+  margin-left: 200px;
 }
 
 p {
-  margin: 0;
+  margin: 10px;
   padding: 0;
+}
+
+.check {
+  border-bottom: medium dotted #2196f3;
 }
