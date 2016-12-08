@@ -17,7 +17,7 @@ export class Hotel {
               description:string,
               country:string){
     this.id = id;
-    this.location = location;
+    this.city = city;
     this.name = name;
     this.description = description;
     this.longitude = parseFloat("51.678418");
