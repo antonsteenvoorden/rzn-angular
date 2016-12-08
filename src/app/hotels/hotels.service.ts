@@ -17,8 +17,8 @@ export class Hotel {
     this.id = id;
     this.name = name;
     this.description = description;
-    this.longitude = parseInt("51.678418");
-    this.latitude = parseInt("7.809007");
+    this.longitude = parseFloat("51.678418");
+    this.latitude = parseFloat("7.809007");
     this.imageLocation = "https://media-cdn.tripadvisor.com/media/photo-s/07/9c/8b/8b/hotel-yurbban-trafalgar.jpg";
     this.imageAlt = "Afbeelding van een hotel";
     this.country = country;

@@ -15,12 +15,14 @@ import {RegisterComponent} from './register/register.component';
 import {LoginComponent} from './login/login.component';
 import {HomeComponent} from './home/home.component';
 import { MyProfileComponent } from './my-profile/my-profile.component';
+
 //ALLECOMPONENTS HIERBOVEN
 
 import {LoggedInGuard} from './guards/logged-in.guard';
 import {UserService} from './services/user.service';
 import {Configuration} from './app.constants';
 import {RegisterService} from './services/register.service';
+import { WeatherService } from './weather/weather.service';
 import {User} from './models/user';
 //SERVICES HIERBOVEN
 
@@ -85,7 +87,14 @@ export class FlexDirective {
       apiKey: 'AIzaSyDArtIeaIwOBi-9UtMlrP36h2kGGwkyS6A'
     })
   ],
-  providers: [UserService, LoggedInGuard, Configuration, RegisterService, User],
+  providers: [
+    UserService,
+    LoggedInGuard,
+    Configuration,
+    RegisterService,
+    WeatherService,
+    User
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
