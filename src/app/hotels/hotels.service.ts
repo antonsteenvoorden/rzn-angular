@@ -58,7 +58,7 @@ export class HotelsService {
     var tmpHotels = [];
     for(let i =0; i < HOTELS.length; i++) {
       var hotel = HOTELS[i];
-        if(hotel.country === country){
+        if(hotel.country.includes(country)){
           tmpHotels.push(hotel);
         }
     }
