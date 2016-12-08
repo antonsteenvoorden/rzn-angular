@@ -1,9 +1,9 @@
 <div class="main-content">
-  <h2>
-    127.0.0.1
-  </h2>
+  <md-card layout-align="center center" class="main-content">
+    <form class="center" #locationForm="ngForm" (ngSubmit)="findHotels(locationForm.value)">
+      <h4>Waar wil je naartoe?</h4>
+      <md-input placeholder="typ een land" value="" name="location" ngModel></md-input>
+      <button type="submit" md-raised-button color="accent">Zoek hotels</button>
+    </form>
+  </md-card>
 </div>
-
-<md-card layout-align="center center" class="main-content">
-  ...
-</md-card>
