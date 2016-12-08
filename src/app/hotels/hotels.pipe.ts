@@ -9,14 +9,15 @@ import {Hotel} from "./hotels.service";
 })
 export class HotelPipe {
   transform(hotels:Hotel[], query = "") {
-    if(!hotels){
+    if (!hotels) {
       return;
     }
     query = query.toLowerCase();
 
-      return hotels.filter(hotel => {
-        return hotel.name.toLowerCase().includes(query)
-          || hotel.description.toLowerCase().includes(query);
-      });
+    return hotels.filter(hotel => {
+      return hotel.name.toLowerCase().includes(query)
+        || hotel.description.toLowerCase().includes(query)
+        || hotel.location.toLowerCase().includes(query);
+    });
   };
 }
