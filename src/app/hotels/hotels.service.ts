@@ -4,7 +4,7 @@ export class Hotel {
   public id: number;
   public name: string;
   public description:string;
-  public location:string;
+  public city:string;
   public longitude: number;
   public latitude: number;
   public imageLocation:string;
@@ -12,7 +12,7 @@ export class Hotel {
   public country:string;
 
   constructor(id: number,
-              location:string,
+              city:string,
               name: string,
               description:string,
               country:string){
