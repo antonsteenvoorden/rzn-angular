@@ -40,22 +40,20 @@
   float: left;
   text-align: left;
   font-size: 15px;
-  width: 327px;
+  width: 190px;
   border-right: thick dotted #2196f3;
 }
 
 .hotel-info-checkin {
-  float: left;
+  float: right;
   text-align: center;
   font-size: 23px;
-  margin-left: 150px;
 }
 
 .hotel-info-checkout {
-  float: left;
+  float: right;
   text-align: center;
   font-size: 23px;
-  margin-left: 50px;
 }
 
 .title {
