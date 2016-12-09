@@ -23,7 +23,8 @@ const appRoutes: Routes = [
   {path: 'register', component: RegisterComponent},
   {path: 'login', component: LoginComponent},
   {path: 'home', component: HomeComponent},
-  {path: 'my-profile', component: MyProfileComponent, canActivate: [LoggedInGuard]},
+  {path: 'my-profile', component: MyProfileComponent},
+  //{path: 'my-profile', component: MyProfileComponent, canActivate: [LoggedInGuard]},
   {path: '*', component: PageNotFoundComponent}
 ];
 

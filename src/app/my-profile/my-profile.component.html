@@ -1,18 +1,28 @@
 <div class="main-content">
   <md-toolbar color="accent">Mijn Profiel</md-toolbar>
-  <md-card>
-    <div class="center" layout-align="center center">
-      <form class="center" #loginForm="ngForm" (ngSubmit)="login(loginForm.value)">
-        <h4>Email</h4>
-        <md-input class="full-width" placeholder="email" value="" name="email" ngModel></md-input>
-        <h4>Password</h4>
-        <md-input type="password" class="full-width" placeholder="wachtwoord" value="" name="password"
-                  ngModel></md-input>
-        <br>
-        <div class="center">
-          <button type="submit" md-raised-button color="primary">Update</button>
-        </div>
-      </form>
-    </div>
+
+
+  <md-card class="profile-card">
+  <md-card-title>John Doe</md-card-title>
+    <img class="img" src="assets/user.png">
+    <md-card-content class="hotel-info-left">
+      <p>Birth date:</p>
+      <p>City:</p>
+      <p>Postal code:</p>
+      <p>Adres:</p>
+      <p>City:</p>
+      <p>Phone number:</p>
+    </md-card-content>
+    <md-card-content class="hotel-info-right">
+      <p>A</p>
+      <p>B</p>
+      <p>C</p>
+      <p>D</p>
+      <p>E</p>
+      <p>F</p>
+    </md-card-content>
+
+    <button type="submit" md-raised-button color="primary">Edit profile info</button>
   </md-card>
+
 </div>

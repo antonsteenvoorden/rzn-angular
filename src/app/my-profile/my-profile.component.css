@@ -1,0 +1,38 @@
+.user-info {
+  text-align: right;
+  float: left;
+  overflow: auto;
+}
+
+.profile-card {
+  margin-left: auto;
+  margin-right: auto;
+  overflow: auto;
+  layout-align: "center center";
+}
+
+.hotel-info-left {
+  float: left;
+  text-align: right;
+  margin-left: 20px;
+  font-size: 18px;
+  overflow: auto;
+}
+
+.hotel-info-right {
+  float: left;
+  text-align: left;
+  font-size: 18px;
+  width: 15%;
+  overflow: auto;
+  margin-left:10px;
+}
+
+img {
+  float: left;
+  width: 10%;
+}
+
+button {
+  float: right;
+}
