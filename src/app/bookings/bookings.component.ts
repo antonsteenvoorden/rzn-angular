@@ -24,6 +24,15 @@ export class BookingsComponent implements OnInit {
       rooms: '1',
       city: 'Rotterdam',
       travelers: '2'
+    },
+    {
+      name: 'Hotel ibis',
+      id: '789',
+      checkIn: '20-Jan-2017',
+      checkOut: '29-Jan-2017',
+      rooms: '1',
+      city: 'Leiden',
+      travelers: '1'
     }
 
 
