@@ -7,14 +7,14 @@ import {Injectable} from '@angular/core';
 
 @Injectable()
 export class WeatherService {
-  constructor(private http:Http,
-              private configuration:Configuration) {
+  constructor(private http: Http,
+              private configuration: Configuration) {
   }
 
   getWeather(hotel) {
     return new Promise((resolve, reject) => {
       this.http.get('http://api.openweathermap.org/data/2.5/weather?lat=' + hotel.latitude + '&lon=' + hotel.longitude
-          + '&lang=nl&APPID=' + this.configuration.weatherApiKey)
+        + '&lang=nl&APPID=' + this.configuration.weatherApiKey)
         .map(results => results.json())
         .subscribe(results => {
           console.log('got the results', results);

@@ -8,12 +8,12 @@ import {APP_BASE_HREF} from '@angular/common';
 
 import {BookingsComponent} from './bookings/bookings.component';
 import {HotelsComponent} from './hotels/hotels.component';
-import {PageNotFoundComponent} from "./page-not-found/page-not-found.component";
-import {RegisterComponent} from "./register/register.component";
-import {LoginComponent} from "./login/login.component";
-import {HomeComponent} from "./home/home.component";
+import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
+import {RegisterComponent} from './register/register.component';
+import {LoginComponent} from './login/login.component';
+import {HomeComponent} from './home/home.component';
 
-import {LoggedInGuard} from './guards/logged-in.guard';
+// import {LoggedInGuard} from './guards/logged-in.guard';
 import {MyProfileComponent} from './my-profile/my-profile.component';
 
 const appRoutes: Routes = [
@@ -24,7 +24,7 @@ const appRoutes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'home', component: HomeComponent},
   {path: 'my-profile', component: MyProfileComponent},
-  //{path: 'my-profile', component: MyProfileComponent, canActivate: [LoggedInGuard]},
+  // {path: 'my-profile', component: MyProfileComponent, canActivate: [LoggedInGuard]},
   {path: '*', component: PageNotFoundComponent}
 ];
 

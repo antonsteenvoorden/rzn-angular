@@ -10,17 +10,17 @@ import {Observable} from 'rxjs/Observable';
   styleUrls: ['./hotels.component.css']
 })
 export class HotelsComponent implements OnInit {
-  hotels:Observable<Hotel[]>;
-  private selectedCountry:string;
+  hotels: Observable<Hotel[]>;
+  private selectedCountry: string;
 
-  constructor(private router:Router,
-              private route:ActivatedRoute,
-              private service:HotelsService) {
+  constructor(private router: Router,
+              private route: ActivatedRoute,
+              private service: HotelsService) {
   }
 
   ngOnInit() {
     this.hotels = this.route.params
-      .switchMap((params:Params) => {
+      .switchMap((params: Params) => {
         /*
          All route/query parameters are strings.
          The (+) in front of the params['id'] expression is a JavaScript trick to convert the string to an integer.
@@ -34,7 +34,7 @@ export class HotelsComponent implements OnInit {
 
   }
 
-  onSelect(hotel:Hotel) {
+  onSelect(hotel: Hotel) {
     this.router.navigate(['/hotels', hotel.id]);
   }
 }

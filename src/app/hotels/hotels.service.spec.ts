@@ -2,7 +2,7 @@
 
 import {TestBed, async, inject} from '@angular/core/testing';
 import {HotelsService} from './hotels.service';
-import {AppModule} from '../app.module'
+import {AppModule} from '../app.module';
 
 describe('Service: Hotels', () => {
   beforeEach(() => {

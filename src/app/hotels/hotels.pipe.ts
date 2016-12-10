@@ -2,13 +2,13 @@
  * Created by Anton on 05/12/2016.
  */
 import {Pipe, PipeTransform} from '@angular/core';
-import {Hotel} from "./hotels.service";
+import {Hotel} from './hotels.service';
 
 @Pipe({
   name: 'hotelPipe'
 })
 export class HotelPipe {
-  transform(hotels:Hotel[], query = "") {
+  transform(hotels: Hotel[], query = '') {
     if (!hotels) {
       return;
     }

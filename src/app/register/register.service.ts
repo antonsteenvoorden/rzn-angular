@@ -3,7 +3,7 @@
  */
 
 import {Injectable} from '@angular/core';
-import {Http, Response, Headers, RequestOptions} from "@angular/http";
+import {Http, Response, Headers, RequestOptions} from '@angular/http';
 import {Configuration} from '../app.constants';
 
 @Injectable()
@@ -14,13 +14,13 @@ export class RegisterService {
   }
 
   getSomething() {
-    return this.http.get('http://date.jsontest.com').map(res => res.json())
+    return this.http.get('http://date.jsontest.com').map(res => res.json());
   }
 
   postSomething() {
-    var json = JSON.stringify({var1: 'Hi', var2: 'Hello'});
-    var params = 'json=' + json;
-    var headers = new Headers();
+    let json = JSON.stringify({var1: 'Hi', var2: 'Hello'});
+    let  params = 'json=' + json;
+    let  headers = new Headers();
     headers.append('Content-Type', 'application/x-www-form-urlencoded');
 
     return this.http.post('http://validate.jsontest.com', params, {

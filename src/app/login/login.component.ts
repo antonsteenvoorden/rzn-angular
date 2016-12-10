@@ -2,8 +2,8 @@
  * Created by Zairon on 04-Dec-16.
  */
 
-import { Component, OnInit } from '@angular/core';
-import { UserService } from '../services/user.service';
+import {Component, OnInit} from '@angular/core';
+import {UserService} from '../services/user.service';
 
 @Component({
   selector: 'app-login',
@@ -12,14 +12,13 @@ import { UserService } from '../services/user.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(
-    private userService: UserService
-  ) { }
+  constructor(private userService: UserService) {
+  }
 
   ngOnInit() {
   }
 
-  login(user){
+  login(user) {
     console.log(user, 'is the user we obtained from login form');
     this.userService.login(user);
   }

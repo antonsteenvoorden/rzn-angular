@@ -4,9 +4,9 @@
 
 // https://medium.com/@blacksonic86/angular-2-authentication-revisited-611bf7373bf9#.643asy5wp
 
-import { Injectable } from '@angular/core';
-import { Http, Headers } from '@angular/http';
-import { Configuration } from '../app.constants';
+import {Injectable} from '@angular/core';
+import {Http, Headers} from '@angular/http';
+import {Configuration} from '../app.constants';
 
 @Injectable()
 export class UserService {
@@ -24,10 +24,10 @@ export class UserService {
     headers.append('Content-Type', 'application/x-www-form-urlencoded');
 
     this.http
-      .post(this.configuration.ServerWithApiUrl+
+      .post(this.configuration.ServerWithApiUrl +
         'login',
-        JSON.stringify({ email, password }),
-        { headers }
+        JSON.stringify({email, password}),
+        {headers}
       )
       .map(res => res.json())
       .subscribe((res) => {

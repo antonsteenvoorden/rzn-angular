@@ -3,8 +3,8 @@
  */
 
 import {Component, OnInit} from '@angular/core';
-import {RegisterService} from './register.service'
-import {User} from '../models/user'
+import {RegisterService} from './register.service';
+import {User} from '../models/user';
 
 @Component({
   selector: 'app-register',

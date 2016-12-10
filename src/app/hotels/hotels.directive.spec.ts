@@ -1,7 +1,7 @@
 /* tslint:disable:no-unused-variable */
 
 import {TestBed, async} from '@angular/core/testing';
-import {AppModule} from '../app.module'
+import {AppModule} from '../app.module';
 import {HotelsDirective} from './hotels.directive';
 
 describe('Directive: Hotels', () => {

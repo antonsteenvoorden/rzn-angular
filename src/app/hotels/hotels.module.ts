@@ -12,8 +12,8 @@ import {HotelPipe} from './hotels.pipe';
 
 import {HotelsService} from './hotels.service';
 import {MaterialModule} from '@angular/material';
-import {AgmCoreModule} from "angular2-google-maps/core/core-module";
-import {WeatherComponent} from "../weather/weather.component";
+import {AgmCoreModule} from 'angular2-google-maps/core/core-module';
+import {WeatherComponent} from '../weather/weather.component';
 
 @NgModule({
   imports: [
