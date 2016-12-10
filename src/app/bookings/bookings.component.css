@@ -61,3 +61,8 @@ p {
 .check {
   border-bottom: medium dotted #2196f3;
 }
+
+pagination-controls:hover {
+  cursor: pointer;
+  cursor: hand;
+}

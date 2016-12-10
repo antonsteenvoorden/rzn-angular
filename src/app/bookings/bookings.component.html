@@ -1,7 +1,8 @@
 <div class="main-content">
   <md-toolbar color="accent">Bookings</md-toolbar>
 
-  <md-card *ngFor="let booking of bookings" class="booking-card">
+  <md-card *ngFor="let booking of bookings | paginate: {itemsPerPage: 3, currentPage:page, id: '1'}"
+           class="booking-card">
     <img class="img-box" md-card-image src="assets/hotel.jpg">
     <md-card-title class="title">{{booking.name}}</md-card-title>
     <md-card-content class="hotel-info-left">
@@ -29,5 +30,11 @@
     </div>
 
   </md-card>
+
+  <pagination-controls (pageChange)="page = $event" id="1"
+                       maxSize="5"
+                       directionLinks="true"
+                       autoHide="true">
+  </pagination-controls>
 
 </div>

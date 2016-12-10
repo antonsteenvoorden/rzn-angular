@@ -33,7 +33,70 @@ export class BookingsComponent implements OnInit {
       rooms: '1',
       city: 'Leiden',
       travelers: '1'
-    }
+    },
+    {
+      name: 'Hotel ibis',
+      id: '7334343',
+      checkIn: '20-Jan-2017',
+      checkOut: '29-Jan-2017',
+      rooms: '1',
+      city: 'Leiden',
+      travelers: '1'
+    },
+    {
+      name: 'Hotel ibis',
+      id: '656544454545',
+      checkIn: '20-Jan-2017',
+      checkOut: '29-Jan-2017',
+      rooms: '1',
+      city: 'Leiden',
+      travelers: '1'
+    },
+    {
+      name: 'Hotel ibis',
+      id: '222278786789',
+      checkIn: '20-Jan-2017',
+      checkOut: '29-Jan-2017',
+      rooms: '1',
+      city: 'Leiden',
+      travelers: '1'
+    },
+    {
+      name: 'Hotel ibis',
+      id: '878865656565',
+      checkIn: '20-Jan-2017',
+      checkOut: '29-Jan-2017',
+      rooms: '1',
+      city: 'Leiden',
+      travelers: '1'
+    },
+    {
+      name: 'Hotel ibis',
+      id: '67485656348',
+      checkIn: '20-Jan-2017',
+      checkOut: '29-Jan-2017',
+      rooms: '1',
+      city: 'Leiden',
+      travelers: '1'
+    },
+    {
+      name: 'Hotel ibis',
+      id: '46564894838',
+      checkIn: '20-Jan-2017',
+      checkOut: '29-Jan-2017',
+      rooms: '1',
+      city: 'Leiden',
+      travelers: '1'
+    },
+    {
+      name: 'Hotel ibis',
+      id: '12143535',
+      checkIn: '20-Jan-2017',
+      checkOut: '29-Jan-2017',
+      rooms: '1',
+      city: 'Leiden',
+      travelers: '1'
+    },
 
 
   ];

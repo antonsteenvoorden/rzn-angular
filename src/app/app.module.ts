@@ -5,6 +5,7 @@ import {HttpModule} from '@angular/http';
 import {HotelsModule} from './hotels/hotels.module';
 import {AppRoutingModule} from './app-routing.module';
 import {AgmCoreModule} from 'angular2-google-maps/core';
+import { Ng2PaginationModule } from 'ng2-pagination';
 // MODULES HIERBOVEN
 
 import {AppComponent} from './app.component';
@@ -77,6 +78,7 @@ export class FlexDirective {
     MyProfileComponent
   ],
   imports: [
+    Ng2PaginationModule,
     BrowserModule,
     FormsModule,
     HttpModule,
