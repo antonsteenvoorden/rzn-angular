@@ -15,14 +15,14 @@
   float: left;
   text-align: right;
   margin-left: 20px;
-  font-size: 18px;
+  font-size: 17px;
   overflow: auto;
 }
 
 .hotel-info-right {
   float: left;
   text-align: left;
-  font-size: 18px;
+  font-size: 17px;
   width: 15%;
   overflow: auto;
   margin-left:10px;

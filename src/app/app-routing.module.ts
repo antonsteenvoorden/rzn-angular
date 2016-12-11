@@ -12,8 +12,10 @@ import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 import {RegisterComponent} from './register/register.component';
 import {LoginComponent} from './login/login.component';
 import {HomeComponent} from './home/home.component';
+import {EditMyProfileComponent} from './my-profile/edit-my-profile/edit-my-profile.component'
+import {EditMyPasswordComponent} from './my-profile/edit-my-password/edit-my-password.component'
 
-// import {LoggedInGuard} from './guards/logged-in.guard';
+import {LoggedInGuard} from './guards/logged-in.guard';
 import {MyProfileComponent} from './my-profile/my-profile.component';
 
 const appRoutes: Routes = [
@@ -24,6 +26,8 @@ const appRoutes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'home', component: HomeComponent},
   {path: 'my-profile', component: MyProfileComponent},
+  {path: 'edit-my-profile', component: EditMyProfileComponent},
+  {path: 'edit-my-password', component: EditMyPasswordComponent},
   // {path: 'my-profile', component: MyProfileComponent, canActivate: [LoggedInGuard]},
   {path: '*', component: PageNotFoundComponent}
 ];

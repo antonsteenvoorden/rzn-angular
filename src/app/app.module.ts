@@ -5,7 +5,7 @@ import {HttpModule} from '@angular/http';
 import {HotelsModule} from './hotels/hotels.module';
 import {AppRoutingModule} from './app-routing.module';
 import {AgmCoreModule} from 'angular2-google-maps/core';
-import { Ng2PaginationModule } from 'ng2-pagination';
+import {Ng2PaginationModule} from 'ng2-pagination';
 // MODULES HIERBOVEN
 
 import {AppComponent} from './app.component';
@@ -16,6 +16,8 @@ import {RegisterComponent} from './register/register.component';
 import {LoginComponent} from './login/login.component';
 import {HomeComponent} from './home/home.component';
 import {MyProfileComponent} from './my-profile/my-profile.component';
+import {EditMyProfileComponent} from './my-profile/edit-my-profile/edit-my-profile.component';
+import {EditMyPasswordComponent} from './my-profile/edit-my-password/edit-my-password.component';
 // COMPONENTS HIERBOVEN
 
 import {LoggedInGuard} from './guards/logged-in.guard';
@@ -23,6 +25,7 @@ import {UserService} from './services/user.service';
 import {Configuration} from './app.constants';
 import {RegisterService} from './register/register.service';
 import {WeatherService} from './weather/weather.service';
+import {BookingService} from './bookings/bookings.service';
 // SERVICES HIERBOVEN
 
 import {User} from './models/user';
@@ -75,7 +78,9 @@ export class FlexDirective {
     RegisterComponent,
     LoginComponent,
     HomeComponent,
-    MyProfileComponent
+    MyProfileComponent,
+    EditMyProfileComponent,
+    EditMyPasswordComponent
   ],
   imports: [
     Ng2PaginationModule,
@@ -95,6 +100,7 @@ export class FlexDirective {
     Configuration,
     RegisterService,
     WeatherService,
+    BookingService,
     User
   ],
   bootstrap: [AppComponent]

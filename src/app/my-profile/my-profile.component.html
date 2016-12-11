@@ -3,26 +3,36 @@
 
 
   <md-card class="profile-card">
-  <md-card-title>John Doe</md-card-title>
+    <md-card-title>Hello, John Doe</md-card-title>
     <img class="img" src="assets/user.png">
     <md-card-content class="hotel-info-left">
       <p>Birth date:</p>
-      <p>City:</p>
       <p>Postal code:</p>
       <p>Adres:</p>
       <p>City:</p>
-      <p>Phone number:</p>
+      <p>Telephone:</p>
     </md-card-content>
     <md-card-content class="hotel-info-right">
-      <p>A</p>
-      <p>B</p>
-      <p>C</p>
-      <p>D</p>
-      <p>E</p>
-      <p>F</p>
+      <p>01-01-2017</p>
+      <p>1234 AB</p>
+      <p>Travelstraat 1</p>
+      <p>Leiden</p>
+      <p>0123456789</p>
     </md-card-content>
 
-    <button type="submit" md-raised-button color="primary">Edit profile info</button>
+    <button routerLink="/bookings" routerLinkActive="bookings" style="width:170px" class="button" type="submit"
+            md-raised-button color="primary">Mijn boekingen
+    </button>
+    <br><br><br>
+    <button routerLink="/edit-my-profile" routerLinkActive="edit-my-profile" style="width:170px" class="button"
+            type="submit"
+            md-raised-button color="primary">Mijn profiel bewerken
+    </button>
+    <br><br><br>
+    <button routerLink="/edit-my-password" routerLinkActive="edit-my-password" style="width:170px" class="button"
+            type="submit"
+            md-raised-button color="primary">Wachtwoord wijzigen
+    </button>
   </md-card>
 
 </div>

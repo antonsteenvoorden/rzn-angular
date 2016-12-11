@@ -11,8 +11,9 @@ export class AppComponent {
   isDarkTheme: boolean = false;
   navItems = [
     {icon: 'home', name: 'Home', route: 'home'},
-    {icon: 'book', name: 'Bookings', route: 'bookings'},
-    {icon: 'hotel', name: 'Hotels', route: 'hotels'},
+    {icon: 'account_circle', name: 'My profile', route: 'my-profile'},
+    {icon: 'book', name: 'My bookings', route: 'bookings'},
+    {icon: 'hotel', name: 'Hotels', route: 'hotels'}
   ];
 
   constructor(private userService: UserService) {

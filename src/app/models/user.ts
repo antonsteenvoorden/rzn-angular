@@ -7,15 +7,15 @@ import {Injectable} from '@angular/core';
 export class User {
   firstName: String;
   lastName: String;
+  birthDate: String;
   password: String;
   repeatPassword: String;
+  address: String;
+  city: String;
+  postalCode: String;
+  phoneNumber: number;
   email: String;
 
-  // constructor(firstName, lastName, password, repeatPassword, email){
-  //   this.firstName = firstName;
-  //   this.lastName = lastName;
-  //   this.password = password;
-  //   this.repeatPassword = repeatPassword;
-  //   this.email = email;
-  // }
+  constructor() {
+  }
 }

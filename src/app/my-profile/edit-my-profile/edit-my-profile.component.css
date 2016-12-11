@@ -8,13 +8,9 @@
   width: 100%;
 }
 
-.register-link {
-  cursor: pointer;
-}
-
-.register-card {
+.edit-profile-card {
   margin: 16px;
-  width: 25%;
+  width: 40%;
   margin-left:auto;
   margin-right:auto;
 }
