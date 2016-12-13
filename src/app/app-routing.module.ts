@@ -21,7 +21,6 @@ import {MyProfileComponent} from './my-profile/my-profile.component';
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'bookings', component: BookingsComponent},
-  {path: 'hotels', component: HotelsComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'login', component: LoginComponent},
   {path: 'home', component: HomeComponent},
