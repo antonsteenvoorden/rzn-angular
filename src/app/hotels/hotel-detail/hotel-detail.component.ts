@@ -16,18 +16,25 @@ import {WeatherComponent} from '../../weather/weather.component';
 })
 export class HotelDetailComponent implements OnInit {
   hotel: Hotel;
+  selectedCountry:string;
 
   constructor(private route: ActivatedRoute,
               private router: Router,
               private service: HotelsService,
               private http: Http,
               private configuration: Configuration) {
+    this.selectedCountry = null;
   }
 
   ngOnInit() {
     this.route.params
     // (+) converts string 'id' to a number
-      .switchMap((params: Params) => this.service.getHotel(+params['id']))
+      .switchMap((params: Params) => {
+        if (params['country']) {
+          this.selectedCountry = params['country'];
+        }
+        return this.service.getHotel(+params['id'])
+      })
       .subscribe((hotel: Hotel) => {
         this.hotel = hotel;
       });
@@ -37,7 +44,12 @@ export class HotelDetailComponent implements OnInit {
     let hotelId = this.hotel ? this.hotel.id : null;
     // Pass along the hero id if available
     // so that the HeroList component can select that hero.
-    this.router.navigate(['/hotels', {id: hotelId}]);
+    if(this.selectedCountry != "undefined"){
+      this.router.navigate(['/hotels', {id: hotelId, country:this.hotel.country}]);
+    }
+    else {
+      this.router.navigate(['/hotels']);
+    }
   }
 
 }

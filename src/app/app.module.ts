@@ -3,6 +3,7 @@ import {NgModule, HostBinding, Input, Directive} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 import {HotelsModule} from './hotels/hotels.module';
+import {HotelsRoutingModule} from './hotels/hotels-routing.module';
 import {AppRoutingModule} from './app-routing.module';
 import {AgmCoreModule} from 'angular2-google-maps/core';
 import {Ng2PaginationModule} from 'ng2-pagination';
@@ -89,6 +90,7 @@ export class FlexDirective {
     HttpModule,
     AppRoutingModule,
     HotelsModule,
+    HotelsRoutingModule,
     MaterialModule.forRoot(),
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDArtIeaIwOBi-9UtMlrP36h2kGGwkyS6A'
