@@ -27,6 +27,7 @@ import {Configuration} from './app.constants';
 import {RegisterService} from './register/register.service';
 import {WeatherService} from './weather/weather.service';
 import {BookingService} from './bookings/bookings.service';
+import {ApiService} from './services/api.service';
 // SERVICES HIERBOVEN
 
 import {User} from './models/user';
@@ -103,6 +104,7 @@ export class FlexDirective {
     RegisterService,
     WeatherService,
     BookingService,
+    ApiService,
     User
   ],
   bootstrap: [AppComponent]
