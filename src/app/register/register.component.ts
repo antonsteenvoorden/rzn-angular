@@ -13,31 +13,29 @@ import {User} from '../models/user';
 })
 
 export class RegisterComponent implements OnInit {
-  getData: String;
-  postData: String;
 
-  constructor(private registerService: RegisterService, private user: User) {
+  // two-way binding
+  user: User;
+  userBDay: String;
+  userBMonth: String;
+  userBYear: String;
 
+  postData: string;
+
+  constructor(private registerService: RegisterService) {
+    this.user = new User();
   }
 
-  testUser() {
-    console.log(this.user.email);
-  }
+  register() {
+    // fix the birthday correctly
+    this.user.birthDate = this.userBDay
+      + '-' + this.userBMonth
+      + '-' + this.userBYear;
 
-  testGet() {
-    this.registerService.getSomething().subscribe(
-      data => this.getData = JSON.stringify(data),
-      error => alert(error),
-      () => console.log('Finished.')
-    );
-  }
-
-  testPost() {
-    this.registerService.postSomething().subscribe(
+    this.registerService.postRegisterUser(this.user).subscribe(
       data => this.postData = JSON.stringify(data),
       error => alert(error),
-      () => console.log('Finished.')
-    );
+      () => console.log(this.postData));
   }
 
   ngOnInit() {

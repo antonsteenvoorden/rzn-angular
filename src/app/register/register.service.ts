@@ -5,6 +5,7 @@
 import {Injectable} from '@angular/core';
 import {Http, Response, Headers, RequestOptions} from '@angular/http';
 import {Configuration} from '../app.constants';
+import {User} from "../models/user";
 
 @Injectable()
 
@@ -13,17 +14,12 @@ export class RegisterService {
   constructor(private http: Http, private conf: Configuration) {
   }
 
-  getSomething() {
-    return this.http.get('http://date.jsontest.com').map(res => res.json());
-  }
+  public postRegisterUser(user: User) {
+    let json = JSON.stringify(user);
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
 
-  postSomething() {
-    let json = JSON.stringify({var1: 'Hi', var2: 'Hello'});
-    let  params = 'json=' + json;
-    let  headers = new Headers();
-    headers.append('Content-Type', 'application/x-www-form-urlencoded');
-
-    return this.http.post('http://validate.jsontest.com', params, {
+    return this.http.post('http://localhost:3000/api/register', json, {
       headers: headers
     }).map(res => res.json());
   }

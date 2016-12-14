@@ -7,6 +7,7 @@ import {HotelsRoutingModule} from './hotels/hotels-routing.module';
 import {AppRoutingModule} from './app-routing.module';
 import {AgmCoreModule} from 'angular2-google-maps/core';
 import {Ng2PaginationModule} from 'ng2-pagination';
+import {DatepickerModule} from './angular2-material-datepicker/datepicker.module';
 // MODULES HIERBOVEN
 
 import {AppComponent} from './app.component';
@@ -19,6 +20,7 @@ import {HomeComponent} from './home/home.component';
 import {MyProfileComponent} from './my-profile/my-profile.component';
 import {EditMyProfileComponent} from './my-profile/edit-my-profile/edit-my-profile.component';
 import {EditMyPasswordComponent} from './my-profile/edit-my-password/edit-my-password.component';
+import {BookHotelComponent} from './hotels/hotel-detail/book-hotel/book-hotel.component';
 // COMPONENTS HIERBOVEN
 
 import {LoggedInGuard} from './guards/logged-in.guard';
@@ -82,9 +84,11 @@ export class FlexDirective {
     HomeComponent,
     MyProfileComponent,
     EditMyProfileComponent,
-    EditMyPasswordComponent
+    EditMyPasswordComponent,
+    BookHotelComponent
   ],
   imports: [
+    DatepickerModule,
     Ng2PaginationModule,
     BrowserModule,
     FormsModule,

@@ -3,14 +3,15 @@
  */
 
 import {Injectable} from '@angular/core';
+import {User} from "./user";
 
 @Injectable()
 export class Booking {
   bookingID: number;
   hotelID: number;
-  hotelName: String;
-  travelerID: number;
+  contactPerson: number;
   numberOfTravelers: number;
+  travelers: User[];
   startDate: String;
   endDate: String;
 

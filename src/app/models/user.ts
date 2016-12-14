@@ -13,9 +13,14 @@ export class User {
   address: String;
   city: String;
   postalCode: String;
-  phoneNumber: number;
+  phoneNumber: String;
   email: String;
 
   constructor() {
+  }
+
+  public toString = (): string => {
+
+    return `User (email: ${this.email})`;
   }
 }

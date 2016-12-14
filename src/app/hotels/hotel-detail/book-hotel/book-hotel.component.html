@@ -1,0 +1,126 @@
+<div class="main-content">
+  <md-toolbar color="accent">Boek Hotel</md-toolbar>
+
+  <md-card class="book-hotel-card">
+
+    <md-card-title>Henann Resort</md-card-title>
+    <md-card-subtitle><b>Reiziger: John Doe</b></md-card-subtitle>
+
+    <div class="checkin-date">
+      <p><b>Check-in</b></p>
+      <material-datepicker [(date)]="startDate"></material-datepicker>
+    </div>
+
+    <div class="checkout-date">
+      <p><b>Check-out</b></p>
+      <material-datepicker [(date)]="endDate"></material-datepicker>
+    </div>
+
+    <md-card-content class="traveler-list">
+      <p><b>Reizigers</b></p>
+      <div>
+        <select class="select" size="3">
+          <option>Zairon Jacobs</option>
+          <option>In Progess</option>
+          <option>Completed</option>
+          <option>Completed</option>
+          <option>Completed</option>
+          <option>Completed</option>
+          <option>Completed</option>
+          <option>Completed</option>
+          <option>Completed</option>
+          <option>Completed</option>
+          <option>Completed</option>
+          <option>Completed</option>
+          <option>Completed</option>
+          <option>Completed</option>
+          <option>Completed</option>
+        </select>
+      </div>
+      <button type="submit" md-raised-button color="primary">
+        Verwijder geselecteerde
+      </button>
+      <br><br><br><br><br>
+      <button (click)="createBooking()" ype="submit" md-raised-button color="primary">
+        Boeking afronden
+      </button>
+
+    </md-card-content>
+
+  </md-card>
+
+  <md-card class="new-traveler">
+    <md-card-title>Een reiziger Toevoegen</md-card-title>
+
+    <table style="width: 100%" cellspacing="0">
+      <tr>
+        <td>
+          <p><b>Email</b></p>
+          <md-input [(ngModel)]="tempTraveler.email" name='email' placeholder=""
+                    style="width: 100%"></md-input>
+        </td>
+      </tr>
+    </table>
+
+    <table style="width: 100%" cellspacing="0">
+      <tr>
+        <td>
+          <p><b>First name</b></p>
+          <md-input [(ngModel)]="tempTraveler.firstName" name='firstName' placeholder="" style="width: 100%"></md-input>
+        </td>
+        <td>
+          <p><b>Last name</b></p>
+          <md-input [(ngModel)]="tempTraveler.lastName" name='lastName' placeholder="" style="width: 100%"></md-input>
+        </td>
+      </tr>
+    </table>
+
+    <table style="width: 100%" cellspacing="0">
+      <tr>
+        <td>
+          <p><b>Postal code</b></p>
+          <md-input [(ngModel)]="tempTraveler.postalCode" name='postalCode' placeholder=""
+                    style="width: 100%"></md-input>
+        </td>
+        <td>
+          <p><b>Adres</b></p>
+          <md-input [(ngModel)]="tempTraveler.address" name='address' placeholder="" style="width: 100%"></md-input>
+        </td>
+        <td>
+          <p><b>City</b></p>
+          <md-input [(ngModel)]="tempTraveler.city" name='city' placeholder="" style="width: 100%"></md-input>
+        </td>
+      </tr>
+    </table>
+
+    <table style="width: 100%" cellspacing="0">
+      <tr>
+        <td>
+          <p><b>Telephone</b></p>
+          <md-input [(ngModel)]="tempTraveler.phoneNumber" name='phoneNumber' placeholder=""
+                    style="width: 100%"></md-input>
+        </td>
+      </tr>
+    </table>
+
+    <p><b>Birth date</b></p>
+    <table style="width: 100%" cellspacing="0">
+      <tr>
+        <td>
+          <md-input [(ngModel)]="newTravelerBDay" name='bDay' placeholder="dd" style="width: 100%"></md-input>
+        </td>
+        <td>
+          <md-input [(ngModel)]="newTravelerBMonth" name='bMonth' placeholder="mm" style="width: 100%"></md-input>
+        </td>
+        <td>
+          <md-input [(ngModel)]="newTravelerBYear" name='bYear' placeholder="jjjj" style="width: 100%"></md-input>
+        </td>
+      </tr>
+    </table>
+    <br>
+    <button
+      (click)="addNewTraveler()" type="submit" md-raised-button color="primary">
+      Voeg toe
+    </button>
+  </md-card>
+</div>
