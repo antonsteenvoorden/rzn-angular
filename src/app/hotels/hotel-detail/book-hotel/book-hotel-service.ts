@@ -25,12 +25,11 @@ export class BookHotelService {
     booking.setEndDate = endDate;
     booking.setTravelers = allTravlers;
 
-    this.api.postBookHotel(booking).subscribe(
-      data => {
+    this.api.post('bookings', booking)
+      .subscribe(data => {
       },
-      error => alert(error),
-      () => {
-      })
-    ;
+      error => {
+        alert(error);
+      });
   }
 }

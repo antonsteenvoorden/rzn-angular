@@ -4,9 +4,10 @@ import 'rxjs/add/operator/switchMap';
 import {Http} from '@angular/http';
 // import { Observable } from 'rxjs/Observable';
 
-import {Hotel, HotelsService} from '../hotels.service';
+import {HotelsService} from '../hotels.service';
 import {Configuration} from '../../app.constants';
 import {WeatherComponent} from '../../weather/weather.component';
+import {Hotel} from '../../models/hotel';
 
 @Component({
   selector: 'app-hotel-detail',

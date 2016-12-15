@@ -1,8 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {Hotel, HotelsService} from './hotels.service';
+import {HotelsService} from './hotels.service';
 import {Router, ActivatedRoute, Params} from '@angular/router';
 import 'rxjs/add/operator/switchMap';
 import {Observable} from 'rxjs/Observable';
+import {Hotel} from '../models/hotel';
 
 @Component({
   selector: 'app-hotels',
