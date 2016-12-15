@@ -1,11 +1,11 @@
 <md-card layout-align="center center" class="book-hotel-card basic">
   <md-toolbar color="accent">Register</md-toolbar>
   <md-card-content>
-    <form>
+
+    <form autocomplete="off" novalidate>
       <h4>Email</h4>
       <p>
-        <md-input [(ngModel)]="user.email" name='email' class="full-width" placeholder=""
-                  value=""></md-input>
+        <md-input [(ngModel)]="user.email" name='email' class="full-width" placeholder=""></md-input>
       </p>
       <h4>Password</h4>
       <p>
@@ -33,7 +33,8 @@
       <table style="width: 100%" cellspacing="0">
         <tr>
           <td><h4>Postal code</h4>
-            <md-input [(ngModel)]="user.postalCode" name='postalCode' placeholder="" style="width: 100%"></md-input>
+            <md-input [(ngModel)]="user.postalCode" name='postalCode' placeholder=""
+                      style="width: 100%"></md-input>
           </td>
           <td><h4>Address</h4>
             <md-input [(ngModel)]="user.address" name='address' placeholder="" style="width: 100%"></md-input>
@@ -46,31 +47,31 @@
       <table style="width: 100%" cellspacing="0">
         <tr>
           <h4>Telephone</h4>
-          <p>
-            <md-input [(ngModel)]="user.phoneNumber" name='phoneNumber' class="full-width" placeholder=""
-                      value=""></md-input>
-          </p>
+          <md-input name="phoneNumber" ngControl="phoneNumber" [(ngModel)]="user.phoneNumber" class="full-width"
+          ></md-input>
         </tr>
       </table>
       <h4>Date of birth</h4>
       <table style="width: 100%" cellspacing="0">
         <tr>
           <td>
-            <md-input [(ngModel)]="userBDay" name='userBDay' placeholder="dd" style="width: 100%"></md-input>
+            <md-input [(ngModel)]="userBDay" name='userBDay' placeholder="dd"
+                      style="width: 100%"></md-input>
           </td>
           <td>
-            <md-input [(ngModel)]="userBMonth" name='userBDay' placeholder="mm" style="width: 100%"></md-input>
+            <md-input [(ngModel)]="userBMonth" name='userBMonth' placeholder="mm" style="width: 100%"></md-input>
           </td>
           <td>
-            <md-input [(ngModel)]="userBYear" name='userBDay' placeholder="jjjj" style="width: 100%"></md-input>
+            <md-input [(ngModel)]="userBYear" name='userBYear' placeholder="jjjj" style="width: 100%"></md-input>
           </td>
         </tr>
       </table>
+      <br><br>
+      <div layout="row" layout-align="start center" flex>
+        <span flex></span>
+        <button type="submit" (click)="register()" class="centered" md-raised-button color="primary">Register now
+        </button>
+      </div>
     </form>
-    <br><br>
-    <div layout="row" layout-align="start center" flex>
-      <span flex></span>
-      <button (click)="register()" class="centered" md-raised-button color="primary">Register now</button>
-    </div>
   </md-card-content>
 </md-card>

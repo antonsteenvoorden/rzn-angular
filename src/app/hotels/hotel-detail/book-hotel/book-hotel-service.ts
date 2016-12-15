@@ -3,26 +3,34 @@
  */
 
 import {Injectable} from '@angular/core';
-import {Http, Response, Headers, RequestOptions} from '@angular/http';
-import {Configuration} from '../../../app.constants';
 import {User} from "../../../models/user";
-import {Hotel} from "../../hotels.service";
 import {Booking} from "../../../models/booking";
+import {ApiService} from "../../../services/api.service";
+import {Hotel} from "../../../models/hotel";
 
 @Injectable()
 
 export class BookHotelService {
 
-  constructor(private http: Http, private conf: Configuration) {
+  constructor(private api: ApiService) {
   }
 
-  public postBookHotel(user: User, hotel: Hotel, AllTravlers: User[]) {
-    let json = JSON.stringify(user);
-    let headers = new Headers();
-    headers.append('Content-Type', 'application/json');
+  public postBookHotel(user: User, hotel: Hotel, allTravlers: User[], startDate: string, endDate: string) {
+    let booking: Booking;
+    booking = new Booking;
 
-    return this.http.post('http://localhost:3000/api/book', json, {
-      headers: headers
-    }).map(res => res.json());
+    booking.setContactPerson = user.getID;
+    booking.setHotelID = hotel.getID;
+    booking.setStartDate = startDate;
+    booking.setEndDate = endDate;
+    booking.setTravelers = allTravlers;
+
+    this.api.postBookHotel(booking).subscribe(
+      data => {
+      },
+      error => alert(error),
+      () => {
+      })
+    ;
   }
 }

@@ -1,6 +1,7 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule, HostBinding, Input, Directive} from '@angular/core';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {CustomFormsModule} from 'ng2-validation'
 import {HttpModule} from '@angular/http';
 import {HotelsModule} from './hotels/hotels.module';
 import {HotelsRoutingModule} from './hotels/hotels-routing.module';
@@ -90,8 +91,10 @@ export class FlexDirective {
   imports: [
     DatepickerModule,
     Ng2PaginationModule,
+    ReactiveFormsModule,
     BrowserModule,
     FormsModule,
+    CustomFormsModule,
     HttpModule,
     AppRoutingModule,
     HotelsModule,

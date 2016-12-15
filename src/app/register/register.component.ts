@@ -20,8 +20,6 @@ export class RegisterComponent implements OnInit {
   userBMonth: String;
   userBYear: String;
 
-  postData: string;
-
   constructor(private registerService: RegisterService) {
     this.user = new User();
   }
@@ -32,10 +30,7 @@ export class RegisterComponent implements OnInit {
       + '-' + this.userBMonth
       + '-' + this.userBYear;
 
-    this.registerService.postRegisterUser(this.user).subscribe(
-      data => this.postData = JSON.stringify(data),
-      error => alert(error),
-      () => console.log(this.postData));
+    this.registerService.postRegisterUser(this.user);
   }
 
   ngOnInit() {
