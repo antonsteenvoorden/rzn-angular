@@ -13,11 +13,11 @@
       <p>Telephone:</p>
     </md-card-content>
     <md-card-content class="hotel-info-right">
-      <p>01-01-2017</p>
-      <p>1234 AB</p>
-      <p>Travelstraat 1</p>
-      <p>Leiden</p>
-      <p>0123456789</p>
+      <p>{{user.birthDate}}</p>
+      <p>{{user.postalCode}}</p>
+      <p>{{user.address}}</p>
+      <p>{{user.city}}</p>
+      <p>{{user.phoneNumber}}</p>
     </md-card-content>
 
     <button routerLink="/bookings" routerLinkActive="bookings" style="width:170px" class="button" type="submit"
@@ -32,6 +32,11 @@
     <button routerLink="/edit-my-password" routerLinkActive="edit-my-password" style="width:170px" class="button"
             type="submit"
             md-raised-button color="primary">Wachtwoord wijzigen
+    </button>
+    <br><br><br>
+    <button style="width:170px" class="button"
+            (click)="logout()"
+            md-raised-button color="primary">Uitloggen
     </button>
   </md-card>
 

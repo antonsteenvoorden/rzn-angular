@@ -19,7 +19,6 @@ export class LoginComponent implements OnInit {
   }
 
   login(user) {
-    console.log(user, 'is the user we obtained from login form');
     this.userService.login(user);
   }
 
