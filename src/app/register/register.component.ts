@@ -14,21 +14,24 @@ import {User} from '../models/user';
 
 export class RegisterComponent implements OnInit {
 
-  // two-way binding birth day fields
+  // two-way binding
+  user: User;
   userBDay: String;
   userBMonth: String;
   userBYear: String;
 
   constructor(private registerService: RegisterService) {
+    this.user = new User();
   }
 
-  register(user: User) {
+  register() {
     // fix the birthday correctly
-    user.birthDate = this.userBDay
+    this.user.birthDate = this.userBDay
       + '-' + this.userBMonth
       + '-' + this.userBYear;
 
-    this.registerService.postRegisterUser(user);
+    this.registerService.postRegisterUser(this.user);
+
   }
 
   ngOnInit() {
