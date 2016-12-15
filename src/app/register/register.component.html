@@ -2,30 +2,30 @@
   <md-toolbar color="accent">Register</md-toolbar>
   <md-card-content>
 
-    <form autocomplete="off" novalidate>
+    <form #registerForm="ngForm" (ngSubmit)="register(registerForm.value)" autocomplete="off" novalidate>
       <h4>Email</h4>
       <p>
-        <md-input [(ngModel)]="user.email" name='email' class="full-width" placeholder=""></md-input>
+        <md-input name='email' class="full-width" ngModel></md-input>
       </p>
       <h4>Password</h4>
       <p>
-        <md-input type="password" [(ngModel)]="user.password" name='password' class="full-width"
-                  placeholder=""></md-input>
+        <md-input type="password" name='password' class="full-width"
+                  placeholder="" ngModel></md-input>
       </p>
       <h4>Repeat password</h4>
       <p>
-        <md-input type="password" [(ngModel)]="user.repeatPassword" name='repeatPassword'
-                  class="full-width" placeholder=""></md-input>
+        <md-input type="password" name='repeatPassword'
+                  class="full-width" placeholder="" ngModel></md-input>
       </p>
       <table style="width: 100%" cellspacing="0">
         <tr>
           <td><h4>First name</h4>
-            <md-input [(ngModel)]="user.firstName" name='firstName' placeholder=""
-                      style="width: 100%"></md-input>
+            <md-input name='firstName' placeholder=""
+                      style="width: 100%" ngModel></md-input>
           </td>
           <td><h4>Last name</h4>
-            <md-input [(ngModel)]="user.lastName" name='lastName' placeholder=""
-                      style="width: 100%"></md-input>
+            <md-input name='lastName' placeholder=""
+                      style="width: 100%" ngModel></md-input>
           </td>
         </tr>
       </table>
@@ -33,43 +33,41 @@
       <table style="width: 100%" cellspacing="0">
         <tr>
           <td><h4>Postal code</h4>
-            <md-input [(ngModel)]="user.postalCode" name='postalCode' placeholder=""
-                      style="width: 100%"></md-input>
+            <md-input name='postalCode' placeholder=""
+                      style="width: 100%" ngModel></md-input>
           </td>
           <td><h4>Address</h4>
-            <md-input [(ngModel)]="user.address" name='address' placeholder="" style="width: 100%"></md-input>
+            <md-input name='address' placeholder="" style="width: 100%" ngModel></md-input>
           </td>
           <td><h4>City</h4>
-            <md-input [(ngModel)]="user.city" name='city' placeholder="" style="width: 100%"></md-input>
+            <md-input name='city' placeholder="" style="width: 100%" ngModel></md-input>
           </td>
         </tr>
       </table>
       <table style="width: 100%" cellspacing="0">
         <tr>
           <h4>Telephone</h4>
-          <md-input name="phoneNumber" ngControl="phoneNumber" [(ngModel)]="user.phoneNumber" class="full-width"
-          ></md-input>
+          <md-input name="phoneNumber" class="full-width" ngModel></md-input>
         </tr>
       </table>
       <h4>Date of birth</h4>
       <table style="width: 100%" cellspacing="0">
         <tr>
           <td>
-            <md-input [(ngModel)]="userBDay" name='userBDay' placeholder="dd"
-                      style="width: 100%"></md-input>
+            <md-input name='userBDay' placeholder="dd" style="width: 100%" [(ngModel)]="userBDay"></md-input>
           </td>
           <td>
-            <md-input [(ngModel)]="userBMonth" name='userBMonth' placeholder="mm" style="width: 100%"></md-input>
+            <md-input name='userBMonth' placeholder="mm" style="width: 100%" [(ngModel)]="userBMonth"></md-input>
           </td>
           <td>
-            <md-input [(ngModel)]="userBYear" name='userBYear' placeholder="jjjj" style="width: 100%"></md-input>
+            <md-input name='userBYear' placeholder="jjjj" style="width: 100%" [(ngModel)]="userBYear"></md-input>
           </td>
         </tr>
       </table>
       <br><br>
       <div layout="row" layout-align="start center" flex>
         <span flex></span>
-        <button type="submit" (click)="register()" class="centered" md-raised-button color="primary">Register now
+        <button type="submit" class="centered" md-raised-button color="primary">Register now
         </button>
       </div>
     </form>
