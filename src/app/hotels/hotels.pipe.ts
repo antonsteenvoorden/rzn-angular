@@ -2,7 +2,7 @@
  * Created by Anton on 05/12/2016.
  */
 import {Pipe, PipeTransform} from '@angular/core';
-import {Hotel} from './hotels.service';
+import {Hotel} from '../models/hotel';
 
 @Pipe({
   name: 'hotelPipe'

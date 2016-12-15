@@ -14,6 +14,7 @@ export class BookingService {
   }
 
   getBookings() {
-    return this.http.get('http://localhost:3000/api/bookings').map(res => res.json());
+    return this.http.get('bookings')
+      .map(res => res.json());
   }
 }

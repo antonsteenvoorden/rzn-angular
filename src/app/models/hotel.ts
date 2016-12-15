@@ -17,7 +17,23 @@ export class Hotel {
   public imageAlt: string;
   public country: string;
 
-  constructor() {
+  constructor(id:number,
+              city:string,
+              name:string,
+              description:string,
+              country:string,
+              latitude:number,
+              longitude:number,
+              imageLocation:string) {
+    this.id = id;
+    this.city = city;
+    this.name = name;
+    this.description = description;
+    this.longitude = longitude
+    this.latitude = latitude;
+    this.imageLocation = imageLocation;
+    this.imageAlt = 'Afbeelding van' + name;
+    this.country = country;
   }
 
   public get getID(): number {

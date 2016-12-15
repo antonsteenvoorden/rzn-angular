@@ -4,6 +4,8 @@
 import {NgModule}       from '@angular/core';
 import {CommonModule}   from '@angular/common';
 import {FormsModule}    from '@angular/forms';
+import {Hotel} from '../models/hotel';
+
 
 import {HotelsComponent}    from './hotels.component';
 import {HotelDetailComponent} from './hotel-detail/hotel-detail.component';
@@ -30,7 +32,8 @@ import {WeatherComponent} from '../weather/weather.component';
     HotelPipe
   ],
   providers: [
-    HotelsService
+    HotelsService,
+    Hotel
   ]
 })
 export class HotelsModule {

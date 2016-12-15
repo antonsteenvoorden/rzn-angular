@@ -3,7 +3,7 @@
  */
 import {Component, Input, OnInit} from '@angular/core';
 import {WeatherService} from './weather.service';
-import {Hotel} from '../hotels/hotels.service';
+import {Hotel} from "../models/hotel";
 
 @Component({
   selector: 'rzn-weather',
