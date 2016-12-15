@@ -57,11 +57,9 @@ export class BookHotelComponent implements OnInit {
     this.setTravelDays();
 
     // TOBEDELETED
-    let contactPrsn: User;
-    contactPrsn = new User();
-    contactPrsn.setID = 5;
+    let user = JSON.parse(localStorage.getItem('user'));
 
-    this.bookHotelservice.postBookHotel(contactPrsn, this.hotel, this.accompanying_travelers,
+    this.bookHotelservice.postBookHotel(user, this.hotel, this.accompanying_travelers,
       this.startDateConverted, this.endDateConverted);
   }
 

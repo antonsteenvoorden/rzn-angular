@@ -4,8 +4,6 @@
 import {Injectable} from '@angular/core';
 import {Http, Headers} from '@angular/http';
 import {Configuration} from '../app.constants';
-import {Booking} from '../models/booking';
-import {User} from '../models/user';
 
 @Injectable()
 export class ApiService {
@@ -37,6 +35,15 @@ export class ApiService {
 
     return this.http
       .post(this.configuration.testServer + route, data, {headers})
+      .map(res => res.json());
+  }  
+  
+  put(route, object:any) {
+    let data = JSON.stringify(object);
+    let headers = this.getHeaders();
+
+    return this.http
+      .put(this.configuration.testServer + route, data, {headers})
       .map(res => res.json());
   }
 }
