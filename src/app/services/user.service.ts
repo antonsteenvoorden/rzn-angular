@@ -18,20 +18,18 @@ export class UserService {
   }
 
   login(user) {
-    console.log('user service obtained user', user);
-    let email = user.email;
-    let password = user.password;
-
     return this.api.post('auth/token', user)
     .subscribe((res)=>{
       console.log(res);
       localStorage.setItem('auth_token', JSON.stringify(res.accessToken));
+      localStorage.setItem('user', JSON.stringify(res.user));
       this.loggedIn = true;
     });
   }
 
   logout() {
     localStorage.removeItem('auth_token');
+    localStorage.removeItem('user');
     this.loggedIn = false;
   }
 
