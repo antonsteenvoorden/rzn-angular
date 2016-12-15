@@ -1,28 +1,31 @@
-<button md-raised-button (click)="gotoHotels()">
+<button md-raised-button (click)="goToHotels()">
   <i class="material-icons">dashboard</i> Terug naar overzicht
 </button>
-<div *ngIf="hotel" class="main-content">
-  <md-toolbar color="accent">{{ hotel.name }}</md-toolbar>
-  <md-card>
-      <div class="image-container">
-        <img src="{{hotel.imageLocation}}" alt="{{hotel.imageAlt}}"/>
-        <p>
-          {{ hotel.description }}
-        </p>
-      </div>
 
-      <rzn-weather [hotel]="hotel"></rzn-weather>
+<md-card *ngIf="hotel" layout-align="center center" class="hotel-detail-card basic">
+  <md-toolbar class="toolbar" color="accent">{{ hotel.name }}</md-toolbar>
+  <md-card-content>
+    <div align="center" class="image-container">
+      <img src="{{hotel.imageLocation}}" alt="{{hotel.imageAlt}}"/>
+      <p>
+        {{ hotel.description }}
+      </p>
+    </div>
 
-    <md-card-content>
-      <md-toolbar color="accent">Bekijk waar {{ hotel.name }} ligt!</md-toolbar>
-      <div class="sebm-google-map-container">
-        <sebm-google-map [latitude]="7.809007" [longitude]="7.809007">
-          <sebm-google-map-marker [latitude]="7.809007" [longitude]="7.809007">
-          </sebm-google-map-marker>
-        </sebm-google-map>
-      </div>
+    <rzn-weather [hotel]="hotel"></rzn-weather>
 
-    </md-card-content>
-  </md-card>
-</div>
+    <button class="book-button" (click)="onSelect()" type="submit" md-raised-button color="primary">
+      Boek dit hotel
+    </button>
 
+    <md-toolbar color="accent">Bekijk waar {{ hotel.name }} ligt!</md-toolbar>
+    <div class="sebm-google-map-container">
+      <sebm-google-map [latitude]="7.809007" [longitude]="7.809007">
+        <sebm-google-map-marker [latitude]="7.809007" [longitude]="7.809007">
+        </sebm-google-map-marker>
+      </sebm-google-map>
+    </div>
+
+
+  </md-card-content>
+</md-card>

@@ -1,0 +1,68 @@
+.img-box {
+  object-fit: cover;
+  width: 150px;
+  height: 150px;
+  padding-left: 30px;
+  padding-top: 24px;
+  float: left;
+}
+
+.book-hotel-card {
+  margin-top: 18px;
+  margin-bottom: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: auto;
+  layout-align: "center center";
+  padding-top: 19px;
+  padding-bottom: 25px;
+
+  clear: both;
+}
+
+.title {
+  font-size: 25px;
+}
+
+.checkin-date {
+  float: left;
+  margin-right: 25px;
+}
+
+.checkout-date {
+  float: left;
+}
+
+.title {
+  font-size: 1.7em;
+  margin-left: 200px;
+}
+
+p {
+  margin: 10px;
+  padding: 0;
+}
+
+.new-traveler {
+  margin-top: 25px;
+  width: 50%;
+}
+
+.traveler-list {
+  float: right;
+  height: 140px;
+  font-size: 18px;
+  text-align: center;
+}
+
+.select {
+  height: 200px;
+  width: 225px;
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+button {
+  width: 185px;
+  text-align: center;
+}

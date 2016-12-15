@@ -40,7 +40,7 @@ export class HotelDetailComponent implements OnInit {
       });
   }
 
-  gotoHotels() {
+  goToHotels() {
     let hotelId = this.hotel ? this.hotel.id : null;
     // Pass along the hero id if available
     // so that the HeroList component can select that hero.
@@ -50,6 +50,10 @@ export class HotelDetailComponent implements OnInit {
     else {
       this.router.navigate(['/hotels']);
     }
+  }
+
+  private onSelect() {
+    this.router.navigate(['/hotels/' + this.hotel.id + '/book']);
   }
 
 }
