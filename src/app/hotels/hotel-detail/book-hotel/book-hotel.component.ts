@@ -1,45 +1,53 @@
 import {Component, OnInit} from '@angular/core';
-import {DatepickerModule} from '../../../angular2-material-datepicker/datepicker.module';
 import {HotelsService} from "../../hotels.service";
-import {ActivatedRoute, Router, Params} from "@angular/router";
-import {Http} from "@angular/http";
-import {Configuration} from "../../../app.constants";
+import {ActivatedRoute, Params} from "@angular/router";
 import {User} from "../../../models/user";
 import {BookHotelService} from "./book-hotel-service";
 import {Hotel} from "../../../models/hotel";
+import {FormGroup, FormControl, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-book-hotel',
   templateUrl: 'book-hotel.component.html',
   styleUrls: ['book-hotel.component.css'],
-  providers: [DatepickerModule, BookHotelService]
+  providers: [BookHotelService]
 })
 
 export class BookHotelComponent implements OnInit {
 
   hotel: Hotel;
+  addTravelerForm: FormGroup;
 
-  // two-way binding
-  tempTraveler: User;
-  newTravelerBDay: string;
-  newTravelerBMonth: string;
-  newTravelerBYear: string;
-  startDate: Date;
-  endDate: Date;
+  startDate: Date = new Date();
+  endDate: Date = new Date((new Date()).valueOf() + 1000 * 3600 * 24);
 
-  // startDate and endDate converted to string
-  startDateConverted: string;
-  endDateConverted: string;
-
-  // array with newly added travelers
-  accompanying_travelers: User[];
+  travelers: User[];
 
   constructor(private route: ActivatedRoute,
               private service: HotelsService,
               private bookHotelservice: BookHotelService) {
 
-    this.tempTraveler = new User();
-    this.accompanying_travelers = <Array<User>> new Array();
+    this.travelers = <Array<User>> new Array();
+
+
+    this.addTravelerForm = new FormGroup({
+      email: new FormControl(null, [
+        Validators.required, Validators.pattern('^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$')]),
+      firstName: new FormControl('', [
+        Validators.required]),
+      lastName: new FormControl('', [
+        Validators.required]),
+      postalCode: new FormControl('', [
+        Validators.required, Validators.minLength(6), Validators.maxLength(6)]),
+      address: new FormControl('', [
+        Validators.required]),
+      city: new FormControl('', [
+        Validators.required]),
+      phoneNumber: new FormControl('', [
+        Validators.required, Validators.pattern('[0-9]+')]),
+      birthDate: new FormControl('', [
+        Validators.required]),
+    });
   }
 
   ngOnInit() {
@@ -54,46 +62,20 @@ export class BookHotelComponent implements OnInit {
   }
 
   private createBooking() {
-    this.setTravelDays();
+    let startDateFormatted = this.startDate.getFullYear()
+      + '-' + (this.startDate.getMonth() + 1)
+      + '-' + this.startDate.getDate()
 
-    // TOBEDELETED
-    let user = JSON.parse(localStorage.getItem('user'));
-
-    this.bookHotelservice.postBookHotel(user, this.hotel, this.accompanying_travelers,
-      this.startDateConverted, this.endDateConverted);
-  }
-
-  private addNewTraveler() {
-    this.setTravelerBDay();
-
-    // add the new traveler to the array with all travelers
-    this.accompanying_travelers.push(this.tempTraveler);
-
-    this.newUser();
-  }
-
-  private setTravelerBDay() {
-    this.tempTraveler.birthDate = this.newTravelerBDay
-      + '-' + this.newTravelerBMonth
-      + '-' + this.newTravelerBYear;
-  }
-
-  private newUser() {
-    // new empty user for the two-way binding
-    this.tempTraveler = new User();
-    this.newTravelerBDay = '';
-    this.newTravelerBMonth = '';
-    this.newTravelerBYear = '';
-  }
-
-  private setTravelDays() {
-    this.startDateConverted = this.startDate.getDate() +
-      '-' + (this.startDate.getMonth() + 1)
-      + '-' + this.startDate.getFullYear();
-
-    this.endDateConverted = this.endDate.getDate()
+    let endDateFormatted = this.endDate.getFullYear()
       + '-' + (this.endDate.getMonth() + 1)
-      + '-' + this.endDate.getFullYear();
+      + '-' + this.endDate.getDate()
+
+    this.bookHotelservice.postBookHotel(this.hotel, this.travelers,
+      startDateFormatted, endDateFormatted);
   }
 
+  private pushTraveler() {
+    this.travelers.push(this.addTravelerForm.value);
+    this.addTravelerForm.reset();
+  }
 }

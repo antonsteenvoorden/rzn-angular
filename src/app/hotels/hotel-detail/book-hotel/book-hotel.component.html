@@ -13,7 +13,7 @@
 
     <div class="checkout-date">
       <p><b>Check-out</b></p>
-      <material-datepicker [(date)]="endDate"></material-datepicker>
+      <material-datepicker disableCurrentDay="true" [(date)]="endDate"></material-datepicker>
     </div>
 
     <md-card-content class="traveler-list">
@@ -50,77 +50,66 @@
   </md-card>
 
   <md-card class="new-traveler">
-    <md-card-title>Een reiziger Toevoegen</md-card-title>
+    <md-card-title>Een reiziger toevoegen</md-card-title>
+    <form [formGroup]="addTravelerForm" (ngSubmit)="pushTraveler()">
+      <table style="width: 100%" cellspacing="0">
+        <tr>
+          <td>
+            <p><b>Email</b></p>
+            <md-input formControlName='email' placeholder=""
+                      style="width: 100%"></md-input>
+          </td>
+        </tr>
+      </table>
 
-    <table style="width: 100%" cellspacing="0">
-      <tr>
-        <td>
-          <p><b>Email</b></p>
-          <md-input [(ngModel)]="tempTraveler.email" name='email' placeholder=""
-                    style="width: 100%"></md-input>
-        </td>
-      </tr>
-    </table>
+      <table style="width: 100%" cellspacing="0">
+        <tr>
+          <td>
+            <p><b>Voornaam</b></p>
+            <md-input formControlName='firstName' placeholder=""
+                      style="width: 100%"></md-input>
+          </td>
+          <td>
+            <p><b>Achternaame</b></p>
+            <md-input formControlName='lastName' placeholder="" style="width: 100%"></md-input>
+          </td>
+        </tr>
+      </table>
+      <p><b>Geboortedatum</b></p>
+      <ng2-datepicker formControlName='birthDate'></ng2-datepicker>
+      <br><br>
+      <table style="width: 100%" cellspacing="0">
+        <tr>
+          <td>
+            <p><b>Postcode</b></p>
+            <md-input formControlName='postalCode' placeholder=""
+                      style="width: 100%"></md-input>
+          </td>
+          <td>
+            <p><b>Adres</b></p>
+            <md-input formControlName='address' placeholder="" style="width: 100%"></md-input>
+          </td>
+          <td>
+            <p><b>Stad</b></p>
+            <md-input formControlName='city' placeholder="" style="width: 100%"></md-input>
+          </td>
+        </tr>
+      </table>
 
-    <table style="width: 100%" cellspacing="0">
-      <tr>
-        <td>
-          <p><b>First name</b></p>
-          <md-input [(ngModel)]="tempTraveler.firstName" name='firstName' placeholder="" style="width: 100%"></md-input>
-        </td>
-        <td>
-          <p><b>Last name</b></p>
-          <md-input [(ngModel)]="tempTraveler.lastName" name='lastName' placeholder="" style="width: 100%"></md-input>
-        </td>
-      </tr>
-    </table>
-
-    <table style="width: 100%" cellspacing="0">
-      <tr>
-        <td>
-          <p><b>Postal code</b></p>
-          <md-input [(ngModel)]="tempTraveler.postalCode" name='postalCode' placeholder=""
-                    style="width: 100%"></md-input>
-        </td>
-        <td>
-          <p><b>Adres</b></p>
-          <md-input [(ngModel)]="tempTraveler.address" name='address' placeholder="" style="width: 100%"></md-input>
-        </td>
-        <td>
-          <p><b>City</b></p>
-          <md-input [(ngModel)]="tempTraveler.city" name='city' placeholder="" style="width: 100%"></md-input>
-        </td>
-      </tr>
-    </table>
-
-    <table style="width: 100%" cellspacing="0">
-      <tr>
-        <td>
-          <p><b>Telephone</b></p>
-          <md-input [(ngModel)]="tempTraveler.phoneNumber" name='phoneNumber' placeholder=""
-                    style="width: 100%"></md-input>
-        </td>
-      </tr>
-    </table>
-
-    <p><b>Birth date</b></p>
-    <table style="width: 100%" cellspacing="0">
-      <tr>
-        <td>
-          <md-input [(ngModel)]="newTravelerBDay" name='bDay' placeholder="dd" style="width: 100%"></md-input>
-        </td>
-        <td>
-          <md-input [(ngModel)]="newTravelerBMonth" name='bMonth' placeholder="mm" style="width: 100%"></md-input>
-        </td>
-        <td>
-          <md-input [(ngModel)]="newTravelerBYear" name='bYear' placeholder="jjjj" style="width: 100%"></md-input>
-        </td>
-      </tr>
-    </table>
-    <br>
-    <button
-      (click)="addNewTraveler()" type="submit" md-raised-button color="primary">
-      Voeg toe
-    </button>
+      <table style="width: 100%" cellspacing="0">
+        <tr>
+          <td>
+            <p><b>Telefoon nummer</b></p>
+            <md-input formControlName='phoneNumber' placeholder=""
+                      style="width: 100%"></md-input>
+          </td>
+        </tr>
+      </table>
+      <br>
+      <button
+        type="submit" [disabled]="!addTravelerForm.valid" md-raised-button color="primary">
+        Voeg toe
+      </button>
+    </form>
   </md-card>
 </div>

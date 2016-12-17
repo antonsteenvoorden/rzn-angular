@@ -10,16 +10,16 @@ import {ApiService} from "../services/api.service";
 
 export class RegisterService {
 
-  constructor(private api:ApiService) {
+  constructor(private api: ApiService) {
   }
 
-  public postRegisterUser(user:User) {
+  public postRegisterUser(user: User) {
     this.api.post('travellers', user)
       .subscribe(data => {
-        console.log(data);
-      },
-      error => {
-        alert(error)
-      });
+          console.log(data);
+        },
+        error => {
+          alert(error)
+        });
   }
 }
