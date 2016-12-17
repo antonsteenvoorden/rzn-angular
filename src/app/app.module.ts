@@ -8,7 +8,8 @@ import {HotelsRoutingModule} from './hotels/hotels-routing.module';
 import {AppRoutingModule} from './app-routing.module';
 import {AgmCoreModule} from 'angular2-google-maps/core';
 import {Ng2PaginationModule} from 'ng2-pagination';
-import {DatepickerModule} from './angular2-material-datepicker/datepicker.module';
+import {DatepickerModule} from 'angular2-material-datepicker';
+import {DatePickerModule} from 'ng2-datepicker';
 // MODULES HIERBOVEN
 
 import {AppComponent} from './app.component';
@@ -89,6 +90,7 @@ export class FlexDirective {
     BookHotelComponent
   ],
   imports: [
+    DatePickerModule,
     DatepickerModule,
     Ng2PaginationModule,
     ReactiveFormsModule,

@@ -24,6 +24,8 @@
     "@angular/router": "~3.1.0",
     "angular2-google-maps": "^0.16.0",
     "core-js": "^2.4.1",
+    "ng2-datepicker": "https://github.com/zaijacobs/ng2-datepicker/tarball/master",
+    "angular2-material-datepicker": "https://github.com/zaijacobs/Angular-2-Datepicker/tarball/master",
     "ng2-pagination": "^1.0.1",
     "ng2-validation": "^3.0.1",
     "rxjs": "5.0.0-beta.12",

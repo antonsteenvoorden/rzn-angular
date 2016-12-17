@@ -17,13 +17,13 @@ export class UserService {
 
   login(user) {
     return this.api.post('auth/token', user)
-    .subscribe((res)=>{
-      console.log(res);
-      localStorage.setItem('auth_token', JSON.stringify(res.accessToken));
-      localStorage.setItem('user', JSON.stringify(res.user));
-      this.loggedIn = true;
-      this.router.navigate(['/']);
-    });
+      .subscribe((res)=>{
+        console.log(res);
+        localStorage.setItem('auth_token', JSON.stringify(res.accessToken));
+        localStorage.setItem('user', JSON.stringify(res.user));
+        this.loggedIn = true;
+        this.router.navigate(['/my-profile']);
+      });
   }
 
   logout() {

@@ -9,7 +9,8 @@ import {UserService} from '../services/user.service';
 @Injectable()
 export class LoggedInGuard implements CanActivate {
   constructor(private router: Router,
-  private userService: UserService) { }
+              private userService: UserService) {
+  }
 
   canActivate() {
     if (localStorage.getItem('auth_token') && this.userService.isLoggedIn()) {

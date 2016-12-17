@@ -8,7 +8,8 @@ import {UserService} from './services/user.service';
 })
 export class AppComponent {
   title = 'TravelPlanner';
-  isDarkTheme: boolean = false;
+
+
   navItems = [
     {icon: 'home', name: 'Home', route: 'home'},
     {icon: 'account_circle', name: 'My profile', route: 'my-profile'},
@@ -17,7 +18,7 @@ export class AppComponent {
   ];
 
   constructor(private userService: UserService) {
-  }
 
+  }
 
 }

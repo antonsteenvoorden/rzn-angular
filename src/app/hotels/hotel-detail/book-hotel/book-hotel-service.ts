@@ -15,21 +15,19 @@ export class BookHotelService {
   constructor(private api: ApiService) {
   }
 
-  public postBookHotel(user: User, hotel: Hotel, allTravlers: User[], startDate: string, endDate: string) {
-    let booking: Booking;
-    booking = new Booking;
-
-    booking.setContactPerson = user.getID;
-    booking.setHotelID = hotel.getID;
-    booking.setStartDate = startDate;
-    booking.setEndDate = endDate;
-    booking.setTravelers = allTravlers;
+  public postBookHotel(hotel: Hotel, travelers: User[], startDate: string, endDate: string) {
+    let booking: Booking = new Booking;
+    booking.contactPerson = JSON.parse(localStorage.getItem('user')).id;
+    booking.hotel = hotel.id;
+    booking.startDate = startDate;
+    booking.endDate = endDate;
+    booking.travelers = travelers;
 
     this.api.post('bookings', booking)
       .subscribe(data => {
-      },
-      error => {
-        alert(error);
-      });
+        },
+        error => {
+          alert(error);
+        });
   }
 }

@@ -17,14 +17,14 @@ export class Hotel {
   public imageAlt: string;
   public country: string;
 
-  constructor(id:number,
-              city:string,
-              name:string,
-              description:string,
-              country:string,
-              latitude:number,
-              longitude:number,
-              imageLocation:string) {
+  constructor(id: number,
+              city: string,
+              name: string,
+              description: string,
+              country: string,
+              latitude: number,
+              longitude: number,
+              imageLocation: string) {
     this.id = id;
     this.city = city;
     this.name = name;
@@ -34,78 +34,6 @@ export class Hotel {
     this.imageLocation = imageLocation;
     this.imageAlt = 'Afbeelding van' + name;
     this.country = country;
-  }
-
-  public get getID(): number {
-    return this.id;
-  }
-
-  public set setID(value: number) {
-    this.id = value;
-  }
-
-  public get getName(): string {
-    return this.name;
-  }
-
-  public set setName(value: string) {
-    this.name = value;
-  }
-
-  public get getDescription(): string {
-    return this.description;
-  }
-
-  public set setDescription(value: string) {
-    this.description = value;
-  }
-
-  public get getCity(): string {
-    return this.city;
-  }
-
-  public set setCity(value: string) {
-    this.city = value;
-  }
-
-  public get getLongitude(): number {
-    return this.longitude;
-  }
-
-  public set setLongitude(value: number) {
-    this.longitude = value;
-  }
-
-  public get getLatitude(): number {
-    return this.latitude;
-  }
-
-  public set setLatitude(value: number) {
-    this.latitude = value;
-  }
-
-  public get getImageLocation(): string {
-    return this.imageLocation;
-  }
-
-  public set setImageLocation(value: string) {
-    this.imageLocation = value;
-  }
-
-  public get getImageAlt(): string {
-    return this.imageAlt;
-  }
-
-  public set setImageAlt(value: string) {
-    this.imageAlt = value;
-  }
-
-  public get getCountry(): string {
-    return this.country;
-  }
-
-  public set setCountry(value: string) {
-    this.country = value;
   }
 
   public toString = (): string => {

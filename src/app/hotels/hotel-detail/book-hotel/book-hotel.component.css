@@ -66,3 +66,16 @@ button {
   width: 185px;
   text-align: center;
 }
+
+md-input.ng-invalid {
+  color: red;
+}
+
+md-input.ng-valid {
+
+}
+
+.error {
+  font-size: 14px;
+  color: red;
+}
