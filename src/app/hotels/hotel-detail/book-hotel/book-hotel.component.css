@@ -1,12 +1,3 @@
-.img-box {
-  object-fit: cover;
-  width: 150px;
-  height: 150px;
-  padding-left: 30px;
-  padding-top: 24px;
-  float: left;
-}
-
 .book-hotel-card {
   margin-top: 18px;
   margin-bottom: 25px;
@@ -16,12 +7,7 @@
   layout-align: "center center";
   padding-top: 19px;
   padding-bottom: 25px;
-
-  clear: both;
-}
-
-.title {
-  font-size: 25px;
+  position: relative;
 }
 
 .checkin-date {
@@ -48,20 +34,6 @@ p {
   width: 50%;
 }
 
-.traveler-list {
-  float: right;
-  height: 140px;
-  font-size: 18px;
-  text-align: center;
-}
-
-.select {
-  height: 200px;
-  width: 225px;
-  font-size: 18px;
-  margin-bottom: 15px;
-}
-
 button {
   width: 185px;
   text-align: center;
@@ -78,4 +50,45 @@ md-input.ng-valid {
 .error {
   font-size: 14px;
   color: red;
+}
+
+.main-traveler {
+  margin-right: 10px;
+}
+
+.delete {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.delete:hover {
+  color: dodgerblue;
+}
+
+.delete:active {
+  color: red;
+}
+
+.card-list {
+  float: right;
+  font-size: 18px;
+text-align: center;
+  overflow: auto;
+}
+
+.traveler-list {
+  font-size: 18px;
+  text-align: left;
+  overflow: auto;
+  height: 300px;
+  width: 200px;
+  box-shadow: 2px 2px 5px #888888;
+}
+
+.book-button {
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  margin-bottom: 30px;
+  margin-right: 25px;
 }

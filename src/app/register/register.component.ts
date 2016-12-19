@@ -14,7 +14,7 @@ import {FormGroup, FormControl, Validators} from "@angular/forms";
 
 export class RegisterComponent implements OnInit {
 
-  registerForm: FormGroup;
+  private registerForm: FormGroup;
 
   constructor(private registerService: RegisterService) {
 
@@ -42,9 +42,10 @@ export class RegisterComponent implements OnInit {
     });
   }
 
-  register() {
+  private register() {
     console.log(this.registerForm.value);
     this.registerService.postRegisterUser(this.registerForm.value);
+    this.registerForm.reset();
   }
 
   ngOnInit() {

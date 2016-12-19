@@ -53,7 +53,7 @@ export class HotelDetailComponent implements OnInit {
     }
   }
 
-  private onSelect() {
+  private goToBook() {
     this.router.navigate(['/hotels/' + this.hotel.id + '/book']);
   }
 

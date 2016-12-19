@@ -1,7 +1,7 @@
 <md-card layout-align="center center" class="book-hotel-card basic">
   <md-toolbar color="accent">Registreren</md-toolbar>
   <md-card-content>
-    <form [formGroup]="registerForm" (ngSubmit)="register()" autocomplete="off" novalidate>
+    <form [formGroup]="registerForm" (ngSubmit)="register()">
       <h4>Email</h4>
       <md-input formControlName='email' class="full-width" placeholder=""></md-input>
       <h4>Wachtwoord</h4>
@@ -25,7 +25,7 @@
           </td>
         </tr>
         <h4>Geboorte datum</h4>
-        <ng2-datepicker formControlName='birthDate'></ng2-datepicker>
+        <ng2-datepicker #ng2datepicker formControlName='birthDate'></ng2-datepicker>
       </table>
       <br><br>
       <table style="width: 100%" cellspacing="0">
@@ -51,7 +51,8 @@
       </table>
       <div layout="row" layout-align="start center" flex>
         <span flex></span>
-        <button type="submit" [disabled]="!registerForm.valid" class="centered" md-raised-button color="primary">
+        <button type="submit" (click)="ng2datepicker.clearInput()" [disabled]="!registerForm.valid" class="centered"
+                md-raised-button color="primary">
           Registreer nu
         </button>
       </div>

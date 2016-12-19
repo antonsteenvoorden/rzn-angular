@@ -14,7 +14,8 @@ export class BookingService {
   }
 
   getBookings() {
-    return this.http.get('bookings')
+    let id = JSON.parse(localStorage.getItem('user')).id;
+    return this.http.get('bookings/' + id)
       .map(res => res.json());
   }
 }

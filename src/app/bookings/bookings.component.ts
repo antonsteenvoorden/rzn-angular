@@ -8,6 +8,7 @@ import {BookingService} from './bookings.service'
 })
 export class BookingsComponent implements OnInit {
   bookings = [];
+
   bookingsDummy = [
     {
       name: 'Henann Resort',

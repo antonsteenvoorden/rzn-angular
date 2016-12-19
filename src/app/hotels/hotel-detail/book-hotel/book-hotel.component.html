@@ -4,49 +4,34 @@
   <md-card class="book-hotel-card">
 
     <md-card-title>Henann Resort</md-card-title>
-    <md-card-subtitle><b>Reiziger: John Doe</b></md-card-subtitle>
+    <md-card-subtitle><b>Reiziger: {{user.firstName}} {{user.lastName}}</b></md-card-subtitle>
 
     <div class="checkin-date">
       <p><b>Check-in</b></p>
-      <material-datepicker [(date)]="startDate"></material-datepicker>
+      <material-datepicker [(rangeStart)]="range" [(date)]="startDate"></material-datepicker>
     </div>
 
     <div class="checkout-date">
       <p><b>Check-out</b></p>
-      <material-datepicker disableCurrentDay="true" [(date)]="endDate"></material-datepicker>
+      <material-datepicker [(rangeStart)]="range" disableCurrentDay="true" [(date)]="endDate"></material-datepicker>
     </div>
 
-    <md-card-content class="traveler-list">
-      <p><b>Reizigers</b></p>
-      <div>
-        <select class="select" size="3">
-          <option>Zairon Jacobs</option>
-          <option>In Progess</option>
-          <option>Completed</option>
-          <option>Completed</option>
-          <option>Completed</option>
-          <option>Completed</option>
-          <option>Completed</option>
-          <option>Completed</option>
-          <option>Completed</option>
-          <option>Completed</option>
-          <option>Completed</option>
-          <option>Completed</option>
-          <option>Completed</option>
-          <option>Completed</option>
-          <option>Completed</option>
-        </select>
-      </div>
-      <button type="submit" md-raised-button color="primary">
-        Verwijder geselecteerde
-      </button>
-      <br><br><br><br><br>
-      <button (click)="createBooking()" ype="submit" md-raised-button color="primary">
-        Boeking afronden
-      </button>
-
+    <md-card-content class="card-list">
+      <p><b>Alle reizigers</b></p>
+      <md-list class="traveler-list" dense>
+        <md-list-item>
+          <md-icon class="main-traveler">account_circle</md-icon>
+          {{user.firstName}} {{user.lastName}}
+        </md-list-item>
+        <md-list-item *ngFor="let traveler of travelers">
+          <md-icon (click)="removeTraveler(traveler)" class="delete">delete</md-icon>
+          {{traveler.firstName}} {{traveler.lastName}}
+        </md-list-item>
+      </md-list>
     </md-card-content>
-
+    <button class="book-button" (click)="createBooking()" type="submit" md-raised-button color="primary">
+      Boeking afronden
+    </button>
   </md-card>
 
   <md-card class="new-traveler">
@@ -70,13 +55,13 @@
                       style="width: 100%"></md-input>
           </td>
           <td>
-            <p><b>Achternaame</b></p>
+            <p><b>Achternaam</b></p>
             <md-input formControlName='lastName' placeholder="" style="width: 100%"></md-input>
           </td>
         </tr>
       </table>
       <p><b>Geboortedatum</b></p>
-      <ng2-datepicker formControlName='birthDate'></ng2-datepicker>
+      <ng2-datepicker #ng2datepicker formControlName='birthDate'></ng2-datepicker>
       <br><br>
       <table style="width: 100%" cellspacing="0">
         <tr>
@@ -107,7 +92,8 @@
       </table>
       <br>
       <button
-        type="submit" [disabled]="!addTravelerForm.valid" md-raised-button color="primary">
+        type="submit" (click)="ng2datepicker.clearInput()" [disabled]="!addTravelerForm.valid" md-raised-button
+        color="primary">
         Voeg toe
       </button>
     </form>

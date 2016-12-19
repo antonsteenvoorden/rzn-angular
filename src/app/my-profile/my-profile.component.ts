@@ -8,8 +8,9 @@ import {Router} from'@angular/router';
   templateUrl: './my-profile.component.html',
   styleUrls: ['./my-profile.component.css']
 })
+
 export class MyProfileComponent implements OnInit {
-  user: User;
+  private user: User;
 
   constructor(private userService: UserService, private router: Router) {
     this.user = JSON.parse(localStorage.getItem('user'));
@@ -18,7 +19,7 @@ export class MyProfileComponent implements OnInit {
   ngOnInit() {
   }
 
-  logout(){
+  logout() {
     this.userService.logout();
     this.router.navigate(['/login']);
   }

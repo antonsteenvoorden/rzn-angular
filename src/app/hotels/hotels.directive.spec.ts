@@ -12,7 +12,7 @@ describe('Directive: Hotels', () => {
     });
   });
 
-  it('should create an instance', () => {
+  it('should create', () => {
     let directive = new HotelsDirective();
     expect(directive).toBeTruthy();
   });
