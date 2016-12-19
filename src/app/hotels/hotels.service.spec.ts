@@ -12,7 +12,7 @@ describe('Service: Hotels', () => {
     });
   });
 
-  it('should ...', inject([HotelsService], (service: HotelsService) => {
+  it('should create', inject([HotelsService], (service: HotelsService) => {
     expect(service).toBeTruthy();
   }));
 });
