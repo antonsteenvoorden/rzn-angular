@@ -29,7 +29,8 @@
         </md-list-item>
       </md-list>
     </md-card-content>
-    <button class="book-button" (click)="createBooking()" type="submit" md-raised-button color="primary">
+    <button id="book-button" class="book-button" (click)="createBooking()" type="submit" md-raised-button
+            color="primary">
       Boeking afronden
     </button>
   </md-card>
@@ -91,9 +92,9 @@
         </tr>
       </table>
       <br>
-      <button
-        type="submit" (click)="ng2datepicker.clearInput()" [disabled]="!addTravelerForm.valid" md-raised-button
-        color="primary">
+      <button id="add-traveler"
+              type="submit" (click)="ng2datepicker.clearInput()" [disabled]="!addTravelerForm.valid" md-raised-button
+              color="primary">
         Voeg toe
       </button>
     </form>

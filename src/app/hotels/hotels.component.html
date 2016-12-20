@@ -1,5 +1,5 @@
 <div class="main-content">
-  <md-toolbar color="accent">Hotels</md-toolbar>
+  <md-toolbar id="hotels-title" color="accent">Hotels</md-toolbar>
   <div style="flex-direction: column">
     <!--TODO: Icon IN THE FIELD! Nu is die niet goed gealigned-->
     <md-icon>search</md-icon>
@@ -7,7 +7,7 @@
     </md-input>
   </div>
   <md-grid-list cols="3" gutterSize="25px">
-    <md-grid-tile *ngFor="let hotel of hotels | async | hotelPipe:query.value" (click)="onSelect(hotel)"
+    <md-grid-tile id="hotels" *ngFor="let hotel of hotels | async | hotelPipe:query.value" (click)="onSelect(hotel)"
                   class="is-link with-shadow">
 
       <md-card layout>

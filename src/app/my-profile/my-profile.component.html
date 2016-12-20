@@ -3,7 +3,7 @@
 
 
   <md-card class="profile-card">
-    <md-card-title>Hello, {{user.firstName}} {{user.lastName}}</md-card-title>
+    <md-card-title id="profile-title">Hello, {{user.firstName}} {{user.lastName}}</md-card-title>
     <img class="img" src="assets/user.png">
     <md-card-content class="hotel-info-left">
       <p>Birth date:</p>
@@ -34,7 +34,7 @@
             md-raised-button color="primary">Wachtwoord wijzigen
     </button>
     <br><br><br>
-    <button style="width:170px" class="button"
+    <button id="logout-button" style="width:170px" class="button"
             (click)="logout()"
             md-raised-button color="primary">Uitloggen
     </button>

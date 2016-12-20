@@ -43,7 +43,6 @@ export class RegisterComponent implements OnInit {
   }
 
   private register() {
-    console.log(this.registerForm.value);
     this.registerService.postRegisterUser(this.registerForm.value);
     this.registerForm.reset();
   }

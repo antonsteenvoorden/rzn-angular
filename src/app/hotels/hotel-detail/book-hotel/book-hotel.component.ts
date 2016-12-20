@@ -20,8 +20,8 @@ export class BookHotelComponent implements OnInit {
   private addTravelerForm: FormGroup;
   private startDate: Date = new Date();
   private endDate: Date = new Date((new Date()).valueOf() + 1000 * 3600 * 24);
-  private range: Date = new Date();
-  private travelers: any[];
+  range: Date = new Date();
+  travelers: any[];
 
 
   constructor(private route: ActivatedRoute,
@@ -63,7 +63,7 @@ export class BookHotelComponent implements OnInit {
       });
   }
 
-  private createBooking() {
+  createBooking() {
     let startDateFormatted = this.startDate.getFullYear()
       + '-' + (this.startDate.getMonth() + 1)
       + '-' + this.startDate.getDate();
@@ -76,12 +76,12 @@ export class BookHotelComponent implements OnInit {
       startDateFormatted, endDateFormatted);
   }
 
-  private pushTraveler() {
+  pushTraveler() {
     this.travelers.push(this.addTravelerForm.value);
     this.addTravelerForm.reset();
   }
 
-  private setRange() {
+  setRange() {
     // set range to the previous month, and eventually the year of that month
     // the range is set to prevent the user going to the previous month
     let newMonth = this.range.getMonth() - 1;
@@ -92,7 +92,7 @@ export class BookHotelComponent implements OnInit {
     this.range.setMonth(newMonth);
   }
 
-  private removeTraveler(traveler: any) {
+  removeTraveler(traveler: any) {
     let index = this.travelers.indexOf(traveler);
     this.travelers.splice(index, 1);
   }
