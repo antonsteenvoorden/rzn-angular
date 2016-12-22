@@ -13,10 +13,13 @@ export class ApiService {
 
   getHeaders() {
     var headers = new Headers();
-    headers.append('content-type', 'application/x-www-form-urlencoded');
-    headers.append('content-type', 'json/application');
+    headers.append('Content-Type', 'application/x-www-form-urlencoded');
+    // headers.append('Content-Type', 'json/application');
+
     if (localStorage.getItem("auth_token")) {
-      headers.append("Access-Token", localStorage.getItem("auth_token"));
+      let auth = "Basic " + localStorage.getItem("auth_token");
+      console.log(auth);
+      headers.append("Authorization", auth);
     }
     return headers;
   }
@@ -36,8 +39,8 @@ export class ApiService {
     return this.http
       .post(this.configuration.testServer + route, data, {headers})
       .map(res => res.json());
-  }  
-  
+  }
+
   put(route, object:any) {
     let data = JSON.stringify(object);
     let headers = this.getHeaders();

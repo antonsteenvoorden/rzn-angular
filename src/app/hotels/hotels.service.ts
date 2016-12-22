@@ -35,14 +35,18 @@ export class HotelsService {
 
   toHotel(r:any):Hotel {
     let hotel = <Hotel>({
-      id: r.id,
-      name: r.name,
-      description: r.description,
-      city: r.city,
-      longitude: r.longitude,
-      latitude: r.latitude,
-      imageLocation: r.imageLocation,
-      country: r.country
+      id: r.Id,
+      name: r.Name,
+      description: r.Description,
+      city: r.City,
+      longitude: r.Longitude1,
+      latitude: r.Latitude1,
+      imageLocation: r.Imagelocation,
+      country: r.Country,
+      pricePerDay: r.Priceperday,
+      capacity: r.Capacity,
+      stars: r.Stars,
+      rating: r.Rating
     });
     return hotel;
   }
