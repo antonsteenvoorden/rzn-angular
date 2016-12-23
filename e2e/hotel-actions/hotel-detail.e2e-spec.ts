@@ -11,6 +11,8 @@ describe('Hotel Detail', function () {
     loginPage = new LoginPage();
     loginPage.navigateTo();
     loginPage.login();
+    page = new HotelsPage();
+
   });
 
   afterEach(() => {

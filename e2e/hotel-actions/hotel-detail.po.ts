@@ -3,10 +3,11 @@ import {browser, element, by} from 'protractor';
 export class TravelPlanner {
   navigateTo() {
     browser.get('/hotels');
+    browser.sleep(1000);
   }
 
   getFirstHotel(){
-    let hotel = element.all(by.css('hotels')).get(0);
+    let hotel = element.all(by.css('is-hotel')).get(0);
     hotel.click();
   }
   getHotelsPageText() {

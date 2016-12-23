@@ -3,6 +3,7 @@ import {browser, element, by} from 'protractor';
 export class HotelsPage {
   navigateTo() {
     browser.get('/hotels');
+    browser.sleep(1000);
   }
 
   getHotelsPageText() {
@@ -10,7 +11,10 @@ export class HotelsPage {
   }
 
   hotelsCount() {
-    return element.all(by.css('is-hotel')).count();
+    return element.all(by.css('.is-hotel'))
+      .then(allElements => {
+        return allElements.length;
+      });
   }
 
   bookFirstHotel() {
