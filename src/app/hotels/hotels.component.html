@@ -8,7 +8,7 @@
   </div>
   <md-grid-list cols="3" gutterSize="25px">
     <md-grid-tile *ngFor="let hotel of hotels | async | hotelPipe:query.value" (click)="onSelect(hotel)"
-                  class="is-link">
+                  [attr.id]="'hotel.' + hotel.id" class="is-link">
 
       <md-card layout>
         <md-card-title>{{hotel.name}}</md-card-title>
