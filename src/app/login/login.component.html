@@ -1,15 +1,15 @@
 <md-card layout-align="center center" class="register-card basic">
-  <md-toolbar color="accent">Login</md-toolbar>
+  <md-toolbar id="login-title" class="login-toolbar" color="accent">Login</md-toolbar>
   <md-card-content>
 
     <form [formGroup]="loginForm" (ngSubmit)="login()">
       <h4>Email</h4>
-      <md-input  formControlName='email' class="full-width" placeholder="email"></md-input>
+      <md-input id="email"  formControlName='email' class="full-width" placeholder="email"></md-input>
       <h4>Password</h4>
-      <md-input formControlName='password' type="password" class="full-width" placeholder="wachtwoord"></md-input>
+      <md-input id ="password" formControlName='password' type="password" class="full-width" placeholder="wachtwoord"></md-input>
     <br>
     <div class="center">
-      <button type="submit" md-raised-button [disabled]="!loginForm.valid" color="primary">Login</button>
+      <button id="login-button" type="submit" md-raised-button [disabled]="!loginForm.valid" color="primary">Login</button>
     </div>
     </form>
 

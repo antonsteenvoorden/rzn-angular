@@ -3,9 +3,12 @@
 
 
   <md-card class="profile-card">
-    <md-card-title>Hello, {{user.firstName}} {{user.lastName}}</md-card-title>
+    <md-card-title id="profile-title">Hello, {{user.firstName}} {{user.lastName}}</md-card-title>
     <img class="img" src="assets/user.png">
     <md-card-content class="hotel-info-left">
+      <p>First name:</p>
+      <p>Last name:</p>
+      <p>Email:</p>
       <p>Birth date:</p>
       <p>Postal code:</p>
       <p>Adres:</p>
@@ -13,11 +16,14 @@
       <p>Telephone:</p>
     </md-card-content>
     <md-card-content class="hotel-info-right">
-      <p>{{user.birthDate}}</p>
-      <p>{{user.postalCode}}</p>
-      <p>{{user.address}}</p>
-      <p>{{user.city}}</p>
-      <p>{{user.phoneNumber}}</p>
+      <p id="profile-first-name">{{user.firstName}}</p>
+      <p id="profile-lastName">{{user.lastName}}</p>
+      <p id="profile-email">{{user.email}}</p>
+      <p id="profile-birthdate">{{user.birthDate}}</p>
+      <p id="profile-postalCode">{{user.postalCode}}</p>
+      <p id="profile-address">{{user.address}}</p>
+      <p id="profile-city">{{user.city}}</p>
+      <p id="profile-phoneNumber">{{user.phoneNumber}}</p>
     </md-card-content>
 
     <button routerLink="/bookings" routerLinkActive="bookings" style="width:170px" class="button" type="submit"
@@ -34,7 +40,7 @@
             md-raised-button color="primary">Wachtwoord wijzigen
     </button>
     <br><br><br>
-    <button style="width:170px" class="button"
+    <button id="logout-button" style="width:170px" class="button"
             (click)="logout()"
             md-raised-button color="primary">Uitloggen
     </button>
