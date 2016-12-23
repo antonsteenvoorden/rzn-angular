@@ -22,7 +22,7 @@ describe('Login', function () {
     page.navigateTo();
     expect(page.getLoginPageText()).toEqual('Login');
     page.login();
-    expect(browser.getCurrentUrl()).toEqual('/');
+    expect(browser.getCurrentUrl()).toBe('http://localhost:4200/');
   });
 
 });

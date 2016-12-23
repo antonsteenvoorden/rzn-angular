@@ -3,10 +3,11 @@ import {browser, element, by} from 'protractor';
 export class MyProfilePage {
   navigateTo() {
     browser.get('/my-profile');
+    browser.sleep(1000);
   }
 
   getProfilePageText() {
-    return element(by.id('profile-title')).getText()
+    return element(by.id('profile-title')).getText();
   }
 
   logoutFromProfile() {
@@ -14,33 +15,37 @@ export class MyProfilePage {
     logoutButton.click();
   }
 
-  getEmail(){
-    return element(by.id('profile-email')).getText()
+
+  getEmail() {
+    return element(by.id('profile-email')).getText();
+  }
+
+  getFirstName() {
+    return element(by.id('profile-first-name')).getText();
+  }
+
+  getLastName() {
+    return element(by.id('profile-lastName')).getText();
 
   }
 
-  getFirstName(){
-    return element(by.id('profile-firstName')).getText()
+  getPostalCode() {
+    return element(by.id('profile-postalCode')).getText();
 
   }
-  getLastName(){
-    return element(by.id('profile-lastName')).getText()
+
+  getAddress() {
+    return element(by.id('profile-address')).getText();
 
   }
-  getPostalCode(){
-    return element(by.id('profile-postalCode')).getText()
+
+  getCity() {
+    return element(by.id('profile-city')).getText();
 
   }
-  getAddress(){
-    return element(by.id('profile-address')).getText()
 
-  }
-  getCity(){
-    return element(by.id('profile-city')).getText()
-
-  }
-  getPhoneNumber(){
-    return element(by.id('profile-phoneNumber')).getText()
+  getPhoneNumber() {
+    return element(by.id('profile-phoneNumber')).getText();
 
   }
 

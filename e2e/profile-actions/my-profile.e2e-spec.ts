@@ -22,22 +22,14 @@ describe('My Profile', function () {
     expect(page.getProfilePageText()).toEqual(expectedWelcomeText);
   });
 
-  it('should display the rest of the profile information', () => {
-      let email:"antons@live.nl";
-      let firstName:"Anton";
-      let lastName:"Steenvoorden";
-      let phoneNumber:"1234512345";
-      let postalCode:"2162CS";
-      let address:"Teststraat 1";
-      let city:"Tumba";
-
-      expect(page.getEmail()).toEqual(email);
-      expect(page.getFirstName()).toEqual(firstName);
-      expect(page.getLastName()).toEqual(lastName);
-      expect(page.getPhoneNumber()).toEqual(phoneNumber);
-      expect(page.getPostalCode()).toEqual(postalCode);
-      expect(page.getAddress()).toEqual(address);
-      expect(page.getCity()).toEqual(city);
+  fit('should display the rest of the profile information', () => {
+    expect(page.getFirstName()).toEqual("Anton");
+    expect(page.getEmail()).toEqual("antons@live.nl");
+    expect(page.getLastName()).toEqual("Steenvoorden");
+    expect(page.getPhoneNumber()).toEqual("1234512345");
+    expect(page.getPostalCode()).toEqual("2162CS");
+    expect(page.getAddress()).toEqual("Teststraat 1");
+    expect(page.getCity()).toEqual("Tumba");
   });
 
 });
