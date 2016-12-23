@@ -7,8 +7,7 @@ import {Hotel} from '../models/hotel';
 
 @Component({
   selector: 'app-hotels',
-  templateUrl: './hotels.component.html',
-  styleUrls: ['./hotels.component.css']
+  templateUrl: './hotels.component.html'
 })
 export class HotelsComponent implements OnInit {
   hotels:Observable<Hotel[]>;
