@@ -1,41 +1,28 @@
-import {TravelPlanner} from './app.po';
+import {LoginPage} from './login.po';
+import {browser} from "protractor";
+import {MyProfilePage} from "./my-profile.po";
 
-describe('TravelPlanner', function () {
-  let page: TravelPlanner;
+describe('Login', function () {
+  let page: LoginPage;
+  let profilePage: MyProfilePage;
+
 
   beforeEach(() => {
-    page = new TravelPlanner();
-    page.navigateToLoginPage();
-    expect(page.getLoginPageText()).toEqual('Login');
-    page.login();
+    browser.get('');
+    page = new LoginPage();
   });
 
   afterEach(() => {
-    page.navigateToProfile();
-    page.logoutFromProfile();
+    profilePage = new MyProfilePage();
+    profilePage.navigateTo();
+    profilePage.logoutFromProfile();
   });
 
-  it('should display user name', () => {
-    expect(page.getProfilePageText()).toEqual('Hello, Zairon Jacobs');
+  it('should login and be redirected to homepage', ()=>{
+    page.navigateTo();
+    expect(page.getLoginPageText()).toEqual('Login');
+    page.login();
+    expect(browser.getCurrentUrl()).toEqual('/');
   });
 
-  it('should view hotels page', () => {
-    page.navigateToHotels();
-    page.getHotelsPageText();
-    expect(page.getHotelsPageText()).toEqual('Hotels');
-  });
-
-  it('should return the right amount of hotels', () => {
-    page.navigateToHotels();
-    expect(page.hotelsCount()).toEqual(7);
-  });
-
-  it('should book the first hotel in hotels', () => {
-    page.navigateToHotels();
-    page.bookFirstHotel();
-  });
-
-  it('should add an extra traveler and then finish the booking', () => {
-    page.navigateToHotels();
-  });
 });

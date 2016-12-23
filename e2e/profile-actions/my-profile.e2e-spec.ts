@@ -1,7 +1,7 @@
 import {MyProfilePage} from './my-profile.po';
 import {LoginPage} from './login.po';
 
-describe('TravelPlanner', function () {
+describe('My Profile', function () {
   let page: MyProfilePage;
   let loginPage: LoginPage;
 
