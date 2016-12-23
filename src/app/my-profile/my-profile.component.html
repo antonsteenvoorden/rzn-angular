@@ -13,11 +13,14 @@
       <p>Telephone:</p>
     </md-card-content>
     <md-card-content class="hotel-info-right">
-      <p>{{user.birthDate}}</p>
-      <p>{{user.postalCode}}</p>
-      <p>{{user.address}}</p>
-      <p>{{user.city}}</p>
-      <p>{{user.phoneNumber}}</p>
+      <p id="profile-firstName">{{user.firstName}}</p>
+      <p id="profile-lastName">{{user.lastName}}</p>
+      <p id="profile-email">{{user.email}}</p>
+      <p id="profile-birthdate">{{user.birthDate}}</p>
+      <p id="profile-postalCode">{{user.postalCode}}</p>
+      <p id="profile-address">{{user.address}}</p>
+      <p id="profile-city">{{user.city}}</p>
+      <p id="profile-phoneNumber">{{user.phoneNumber}}</p>
     </md-card-content>
 
     <button routerLink="/bookings" routerLinkActive="bookings" style="width:170px" class="button" type="submit"
