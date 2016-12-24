@@ -19,7 +19,8 @@ export class UserService {
     let authToken = btoa(user.email + ":" + user.password);
     localStorage.setItem('auth_token', authToken);
     return this.api.get('account/validate')
-      .subscribe(res=>{
+      .map(res => res.json())
+      .subscribe(res =>{
         localStorage.setItem('user', JSON.stringify(res.user));
         this.loggedIn = true;
         this.router.navigate(['/my-profile']);
