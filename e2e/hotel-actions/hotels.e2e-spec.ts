@@ -31,4 +31,10 @@ describe('Hotels', function () {
     expect(page.hotelsCount()).toEqual(7);
   });
 
+  it('should find one hotel when querying "zweden"', () => {
+    page.navigateToHome();
+    page.searchFor('zweden');
+    expect(page.hotelsCount()).toEqual(1);
+  });
+
 });

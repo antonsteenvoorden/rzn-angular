@@ -27,7 +27,7 @@ export class HotelsComponent implements OnInit {
          */
         if (params['country']) {
           this.selectedCountry = params['country'];
-          return this.service.getHotelsByCountry(this.selectedCountry);
+          return this.service.getHotelsByQuery(this.selectedCountry);
         }
         return this.service.getHotels();
       });

@@ -5,6 +5,18 @@ export class HotelsPage {
     browser.get('/hotels');
     browser.sleep(1000);
   }
+  navigateToHome() {
+    browser.get('/');
+    browser.sleep(1000);
+  }
+
+  searchFor(query: string) {
+    let searchBar = element(by.id('home-search-input'));
+    let searchButton = element(by.id('home-submit'));
+    searchBar.click();
+    searchBar.sendKeys(query);
+    searchButton.click();
+  }
 
   getHotelsPageText() {
     return element(by.id('hotels-title')).getText();

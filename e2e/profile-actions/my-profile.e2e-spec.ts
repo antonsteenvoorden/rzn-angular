@@ -22,7 +22,7 @@ describe('My Profile', function () {
     expect(page.getProfilePageText()).toEqual(expectedWelcomeText);
   });
 
-  fit('should display the rest of the profile information', () => {
+  it('should display the rest of the profile information', () => {
     expect(page.getFirstName()).toEqual("Anton");
     expect(page.getEmail()).toEqual("antons@live.nl");
     expect(page.getLastName()).toEqual("Steenvoorden");

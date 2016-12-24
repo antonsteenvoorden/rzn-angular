@@ -4,19 +4,6 @@ import {ApiService} from '../services/api.service';
 import {Hotel} from '../models/hotel';
 let HOTELS = [];
 
-// let HOTELS = [
-//   new Hotel(7, 'Kaatsheuvel', 'Stay Okay', 'Heel knus in de boerderij', 'nederland'),
-//   new Hotel(8, 'Parijs', 'Stay Okay', 'Heel knus in de boerderij', 'frankrijk'),
-//   new Hotel(9, 'Hamburg', 'Stay Okay', 'Heel knus in de boerderij', 'duitsland'),
-//   new Hotel(10, 'Brugge', 'Stay Okay', 'Heel knus in de boerderij', 'belgie'),
-//   new Hotel(11, 'Tumba', 'Stay Okay', 'Heel knus in de boerderij', 'zweden'),
-//   new Hotel(13, 'Stockholm', 'Formule 1 Hotel', 'Mijn favoriete locatie voor onderweg', 'zweden'),
-//   new Hotel(12, 'Lisse', 'Antons Hotel', 'Hoge kwaliteit, goede service', 'nederland'),
-//   new Hotel(14, 'Zimbabwe', 'Bij timon thuis', 'Plekje in de stad', 'afrika'),
-//   new Hotel(15, 'Leiden', 'Waterkribbors', 'Mooiste plek aan het water', 'nederland'),
-//   new Hotel(16, 'Gotenborg', 'RubberManHotel', 'Tijdens het fietsen moet je niet vallen', 'zweden')
-// ];
-
 let hotelsPromise = Promise.resolve(HOTELS);
 
 @Injectable()
@@ -33,27 +20,48 @@ export class HotelsService {
       });
   }
 
+  getHotelsByQuery(query: string) {
+    return this.api.get('hotels')
+      .map((res)=>{
+        HOTELS = res.json().map(this.toHotel);
+        HOTELS = this.filterByQuery(HOTELS, query);
+        return HOTELS;
+      });
+  }
+
   toHotel(r:any):Hotel {
     let hotel = <Hotel>({
-      id: r.Id,
-      name: r.Name,
-      description: r.Description,
-      city: r.City,
-      longitude: r.Longitude1,
-      latitude: r.Latitude1,
-      imageLocation: r.Imagelocation,
-      country: r.Country,
-      pricePerDay: r.Priceperday,
-      capacity: r.Capacity,
-      stars: r.Stars,
-      rating: r.Rating
+      id: r.Id || r.id,
+      name: r.Name || r.name,
+      description: r.Description || r.description,
+      city: r.City || r.city,
+      longitude: r.Longitude1 || r.longitude,
+      latitude: r.Latitude1 || r.latitude,
+      imageLocation: r.Imagelocation || r.imageLocation,
+      country: r.Country || r.country,
+      pricePerDay: r.Priceperday || r.pricePerDay,
+      capacity: r.Capacity || r.capacity,
+      stars: r.Stars || r.stars,
+      rating: r.Rating || r.rating
     });
+    console.log("Returning hotel", hotel);
     return hotel;
   }
 
   getHotel(id:number | string) {
     console.log(HOTELS);
     return Promise.resolve(HOTELS.find(hotel => hotel.id === +id));
+  }
+
+  filterByQuery(listOfHotels, query) {
+    let tmpHotels = [];
+    for (let i = 0; i < listOfHotels.length; i++) {
+      let hotel = HOTELS[i];
+      if (hotel.country.includes(query) || hotel.description.includes(query)) {
+        tmpHotels.push(hotel);
+      }
+    }
+    return tmpHotels;
   }
 
   getHotelsByCountry(country) {
