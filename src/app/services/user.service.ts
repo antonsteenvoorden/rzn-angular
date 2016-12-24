@@ -23,7 +23,7 @@ export class UserService {
       .subscribe(res =>{
         localStorage.setItem('user', JSON.stringify(res.user));
         this.loggedIn = true;
-        this.router.navigate(['/my-profile']);
+        this.router.navigate(['/']);
       }, err =>{
         alert('Login failed');
         localStorage.removeItem('auth_token');
