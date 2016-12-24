@@ -18,7 +18,6 @@ export class ApiService {
 
     if (localStorage.getItem("auth_token")) {
       let auth = "Basic " + localStorage.getItem("auth_token");
-      console.log(auth);
       headers.append("Authorization", auth);
     }
     return headers;

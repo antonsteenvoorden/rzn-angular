@@ -14,6 +14,10 @@ export class MyProfileComponent implements OnInit {
 
   constructor(private userService: UserService, private router: Router) {
     this.user = JSON.parse(localStorage.getItem('user'));
+    if(!this.user) {
+      this.userService.logout();
+      this.router.navigate(['/login']);
+    }
   }
 
   ngOnInit() {
