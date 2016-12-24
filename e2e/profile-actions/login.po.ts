@@ -16,7 +16,7 @@ export class LoginPage {
 
     let password = element(by.id('password-input'));
     password.click();
-    password.sendKeys('123QWE,./');
+    password.sendKeys('Password1234!');
 
     let loginButton = element(by.id('login-button'));
     loginButton.click();
