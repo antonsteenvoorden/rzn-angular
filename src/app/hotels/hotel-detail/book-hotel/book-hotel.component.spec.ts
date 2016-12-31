@@ -36,6 +36,7 @@ describe('BookHotelComponent', () => {
   });
 
   it('should set the range to the previous month', () => {
+    component.setRange();
     let range: Date = component.range;
     expect(range.getMonth()).toEqual(new Date().getMonth() - 1);
     if (range.getMonth() == 12) {
