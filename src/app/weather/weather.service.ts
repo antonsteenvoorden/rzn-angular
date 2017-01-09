@@ -17,7 +17,6 @@ export class WeatherService {
         + '&lang=nl&APPID=' + this.configuration.weatherApiKey)
         .map(results => results.json())
         .subscribe(results => {
-          console.log('got the results', results);
           resolve(results);
         }, error => {
           reject(error);

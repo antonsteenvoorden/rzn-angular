@@ -56,7 +56,7 @@ export class BookHotelComponent implements OnInit {
   ngOnInit() {
     this.route.params
       .switchMap((params: Params) => {
-        return this.hotelService.getHotel(+params['id']);
+        return this.hotelService.getHotel(params['id']);
       })
       .subscribe((hotel: Hotel) => {
         this.hotel = hotel;

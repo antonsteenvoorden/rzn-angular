@@ -21,7 +21,7 @@ export class UserService {
     return this.api.get('account/validate')
       .map(res => res.json())
       .subscribe(res =>{
-        localStorage.setItem('user', JSON.stringify(res.user));
+        localStorage.setItem('user', JSON.stringify(res));
         this.loggedIn = true;
         this.router.navigate(['/']);
       }, err =>{

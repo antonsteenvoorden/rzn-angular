@@ -7,7 +7,7 @@ import {Injectable} from '@angular/core';
 @Injectable()
 export class Hotel {
 
-  public id:number;
+  public id:string;
   public name:string;
   public description:string;
   public city:string;
@@ -21,7 +21,7 @@ export class Hotel {
   public capacity:number;
   public pricePerDay:number;
 
-  constructor(id:number,
+  constructor(id:string,
               city:string,
               name:string,
               description:string,

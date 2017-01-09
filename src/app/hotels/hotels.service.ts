@@ -44,13 +44,11 @@ export class HotelsService {
       stars: r.Stars || r.stars,
       rating: r.Rating || r.rating
     });
-    console.log("Returning hotel", hotel);
     return hotel;
   }
 
-  getHotel(id:number | string) {
-    console.log(HOTELS);
-    return Promise.resolve(HOTELS.find(hotel => hotel.id === +id));
+  getHotel(id:string) {
+    return Promise.resolve(HOTELS.find(hotel => hotel.id === id));
   }
 
   filterByQuery(listOfHotels, query) {

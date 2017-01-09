@@ -5,13 +5,10 @@ import {Injectable} from '@angular/core';
 
 @Injectable()
 export class User {
-
-  id: number;
   firstName: String;
   lastName: String;
   birthDate: String;
   password: String;
-  repeatPassword: String;
   address: String;
   city: String;
   postalCode: String;

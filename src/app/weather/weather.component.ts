@@ -26,7 +26,6 @@ export class WeatherComponent implements OnInit {
   getFromWeatherApi() {
     this.service.getWeather(this.hotel)
       .then((results) => {
-        console.log('results in component is ', results);
         this.handleResults(results);
       })
       .catch((err) => {

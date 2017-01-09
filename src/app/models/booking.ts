@@ -9,7 +9,7 @@ import {User} from "./user";
 export class Booking {
 
   id: number;
-  hotel: number;
+  hotel: string;
   contactPerson: number;
   numberOfTravelers: number;
   travelers: User[];

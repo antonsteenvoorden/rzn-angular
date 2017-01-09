@@ -34,7 +34,8 @@ export class HotelDetailComponent implements OnInit {
         if (params['country']) {
           this.selectedCountry = params['country'];
         }
-        return this.service.getHotel(+params['id'])
+        let id = params['id'];
+        return this.service.getHotel(id);
       })
       .subscribe((hotel: Hotel) => {
         this.hotel = hotel;
