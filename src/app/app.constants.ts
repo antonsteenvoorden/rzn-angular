@@ -7,7 +7,7 @@ import { environment } from '../environments/environment';
 
 @Injectable()
 export class Configuration {
-  public testServer = (environment.production) ?  'http://localhost:1337/api/' : 'http://localhost:39081/api/';
+  public testServer = (environment.production) ?  'http://145.97.16.183:39081/api/' : 'http://localhost:1337/api/';
   // public testServer = 'http://localhost:1337/api/';
   // public testServer = 'http://localhost:39081/api/';
   public googleMapsApiKey = 'AIzaSyDArtIeaIwOBi-9UtMlrP36h2kGGwkyS6A';
