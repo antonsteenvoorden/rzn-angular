@@ -36,6 +36,7 @@ export class HotelDetailPage {
 
     // TODO: add traveler to booking
   }
+  
   getWeatherDescription(){
     let tmp = element.all(by.id("weather.description"));
     return tmp.getText();

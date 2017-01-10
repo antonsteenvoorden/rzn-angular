@@ -28,11 +28,27 @@ describe('Hotel Detail', function () {
     expect(url.includes('bookings')).toEqual(true)
   });
 
-  fit('Should go to bookings and validate first booking', () => {
+  it('Should go to bookings and validate first booking', () => {
     page.navigateTo();
+
     page.getBookingId().then(id => {
-      console.log(id);
-      expect(id[0].includes('10')).toEqual(true);
-    })
+      expect(id[0].includes('10')).toEqual(true, 'booking id');
+    });
+    page.getBookingCity().then(id => {
+      expect(id[0].includes('Lisse')).toEqual(true, 'booking city');
+    });
+    page.getBookingNumberOfTravellers().then(id => {
+      expect(id[0].includes('2')).toEqual(true, 'number of travelers');
+    });
+    page.getBookingPrice().then(id => {
+      expect(id[0].includes('10.5')).toEqual(true, 'price');
+    });
+    page.getBookingCheckout().then(id => {
+      expect(id[0].includes('10-01-2017')).toEqual(true, 'checkout');
+    });
+    page.getBookingCheckin().then(id => {
+      expect(id[0].includes('01-01-2017')).toEqual(true, 'checkin');
+    });
+
   });
 });
