@@ -8,11 +8,11 @@ import {User} from "./user";
 @Injectable()
 export class Booking {
 
-  id: number;
+  id: string;
   hotel: string;
-  contactPerson: number;
-  numberOfTravelers: number;
-  travelers: User[];
+  contactPerson: string;
+  numberOfTravellers: number;
+  travellers: User[];
   startDate: String;
   endDate: String;
   price: number;

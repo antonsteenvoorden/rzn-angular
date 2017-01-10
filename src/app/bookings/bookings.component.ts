@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {BookingService} from './bookings.service'
+import {Booking} from '../models/booking';
+import {Observable} from 'rxjs/Observable';
 
 @Component({
   selector: 'app-bookings',
@@ -7,7 +9,7 @@ import {BookingService} from './bookings.service'
   styleUrls: ['./bookings.component.css']
 })
 export class BookingsComponent implements OnInit {
-  bookings = [];
+  bookings:Observable<Booking[]>;
 
   bookingsDummy = [
     {
@@ -107,15 +109,8 @@ export class BookingsComponent implements OnInit {
   constructor(private bookingService: BookingService) {
   }
 
-  getBookings() {
-    this.bookingService.getBookings().subscribe(
-      data => this.bookings = data,
-      error => alert(error),
-      () => console.log('Finished.')
-    )
-  };
-
   ngOnInit() {
+    this.bookings = this.bookingService.getBookings();
   }
 
 }

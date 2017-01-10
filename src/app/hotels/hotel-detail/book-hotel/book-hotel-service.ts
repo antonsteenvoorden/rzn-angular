@@ -21,7 +21,7 @@ export class BookHotelService {
     booking.hotel = hotel.id;
     booking.startDate = startDate;
     booking.endDate = endDate;
-    booking.travelers = travelers;
+    booking.travellers = travelers;
 
     this.api.post('bookings', booking)
       .subscribe(data => {

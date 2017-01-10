@@ -1,7 +1,7 @@
 <div class="main-content">
   <md-toolbar color="accent">Bookings</md-toolbar>
 
-  <md-card *ngFor="let booking of bookingsDummy | paginate: {itemsPerPage: 3, currentPage:page, id: '1'}"
+  <md-card *ngFor="let booking of bookings | async | paginate: {itemsPerPage: 3, currentPage:page, id: '1'}"
            class="register-card">
     <img class="img-box" md-card-image src="assets/hotel.jpg">
     <md-card-title class="title">{{booking.name}}</md-card-title>
@@ -9,24 +9,24 @@
       <p>Booking ID:</p>
       <p>City:</p>
       <p>Travelers:</p>
-      <p>Rooms:</p>
+      <p>Price:</p>
     </md-card-content>
     <md-card-content class="hotel-info-right">
       <p>{{booking.id}}</p>
-      <p>{{booking.city}}</p>
-      <p>{{booking.travelers}}</p>
-      <p>{{booking.rooms}}</p>
+      <p>{{booking.hotel.city}}</p>
+      <p>{{booking.numberOfTravellers}}</p>
+      <p>{{booking.price}}</p>
     </md-card-content>
 
     <div class="dots"></div>
 
     <div class="hotel-info-checkout">
       <p class="check"><b>Check-out</b></p>
-      <p>{{booking.checkOut}}</p>
+      <p>{{booking.endDate}}</p>
     </div>
     <div class="hotel-info-checkin">
       <p class="check"><b>Check-in</b></p>
-      <p>{{booking.checkIn}}</p>
+      <p>{{booking.startDate}}</p>
     </div>
 
   </md-card>
