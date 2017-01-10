@@ -14,7 +14,7 @@ export class WeatherService {
 
   getWeather(hotel) {
     return new Promise((resolve, reject) => {
-      this.http.get('http://api.openweathermap.org/data/2.5/weather?lat=' + hotel.latitude + '&lon=' + hotel.longitude
+      this.http.get(this.configuration.weatherApiUrl + '?lat=' + hotel.latitude + '&lon=' + hotel.longitude
           + '&lang=nl&APPID=' + this.configuration.weatherApiKey)
         .map(results => results.json())
         .subscribe(results => {

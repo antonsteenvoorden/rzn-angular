@@ -45,7 +45,7 @@
     "karma-htmlfile-reporter": "^0.3.4",
     "karma-jasmine": "^1.0.2",
     "karma-remap-istanbul": "^0.2.1",
-    "protractor": "4.0.9",
+    "protractor": "^4.0.9",
     "ts-node": "1.2.1",
     "ts-promise": "^0.3.4",
     "tslint": "3.13.0",
