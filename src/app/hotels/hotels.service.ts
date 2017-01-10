@@ -48,7 +48,7 @@ export class HotelsService {
   }
 
   getHotel(id:string) {
-    return Promise.resolve(HOTELS.find(hotel => hotel.id === id));
+    return Promise.resolve(HOTELS.find(hotel => hotel.id+"" === id));
   }
 
   filterByQuery(listOfHotels, query) {
