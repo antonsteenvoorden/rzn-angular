@@ -1,17 +1,18 @@
 import {LoginPage} from "../profile-actions/login.po";
 import {MyProfilePage} from "../profile-actions/my-profile.po";
-import {HotelDetailPage} from "../hotel-actions/hotel-detail.po";
+import {BookingPage} from "./booking.po";
+import {browser} from "protractor/built/index";
 
 describe('Hotel Detail', function () {
-  let page:HotelDetailPage;
+  let page:BookingPage;
   let loginPage:LoginPage;
   let myProfilePage:MyProfilePage;
-  
+
   beforeEach(() => {
     loginPage = new LoginPage();
     loginPage.navigateTo();
     loginPage.login();
-    page = new HotelDetailPage();
+    page = new BookingPage();
   });
 
   afterEach(() => {
@@ -21,19 +22,17 @@ describe('Hotel Detail', function () {
   });
 
 
-  it('Should set the weather after API response.', () => {
+  it('Should go to bookings', () => {
     page.navigateTo();
-    page.getWeatherDescription().then(text => {
-      expect(text[0].includes('onbewolkt')).toEqual(true);
-    });
-    page.getWeatherHumidity().then(text => {
-      expect(text[0].includes('31')).toEqual(true);
-    });
-    page.getWeatherTemperature().then(text => {
-      expect(text[0].includes('33.41')).toEqual(true);
-    });
-    page.getWeatherWindspeed().then(text => {
-      expect(text[0].includes('1.98')).toEqual(true);
-    });
+    let url = browser.getCurrentUrl();
+    expect(url.includes('bookings')).toEqual(true)
+  });
+
+  fit('Should go to bookings and validate first booking', () => {
+    page.navigateTo();
+    page.getBookingId().then(id => {
+      console.log(id);
+      expect(id[0].includes('10')).toEqual(true);
+    })
   });
 });

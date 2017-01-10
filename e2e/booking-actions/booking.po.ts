@@ -33,22 +33,10 @@ export class BookingPage {
     let bookButton1 = element(by.id('book-button'));
     bookButton1.click();
 
-    // TODO: add traveler to booking
   }
-  getWeatherDescription(){
-    let tmp = element.all(by.id("weather.description"));
+  getBookingId(){
+    let tmp = element.all(by.id("booking.id"));
     return tmp.getText();
   }
-  getWeatherHumidity(){
-    let tmp = element.all(by.id("weather.humidity"));
-    return tmp.getText();
-  }
-  getWeatherTemperature(){
-    let tmp = element.all(by.id("weather.temperature"));
-    return tmp.getText();
-  }
-  getWeatherWindspeed(){
-    let tmp = element.all(by.id("weather.windspeed"));
-    return tmp.getText();
-  }
+  
 }

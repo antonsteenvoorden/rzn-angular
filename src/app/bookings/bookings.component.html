@@ -12,21 +12,21 @@
       <p>Price:</p>
     </md-card-content>
     <md-card-content class="hotel-info-right">
-      <p>{{booking.id}}</p>
-      <p>{{booking.hotel.city}}</p>
-      <p>{{booking.numberOfTravellers}}</p>
-      <p>{{booking.price}}</p>
+      <p id="booking.id">{{booking.id}}</p>
+      <p id="booking.city">{{booking.hotel.city}}</p>
+      <p id="booking.numberOfTravellers">{{booking.numberOfTravellers}}</p>
+      <p id="booking.price">{{booking.price}}</p>
     </md-card-content>
 
     <div class="dots"></div>
 
     <div class="hotel-info-checkout">
       <p class="check"><b>Check-out</b></p>
-      <p>{{booking.endDate}}</p>
+      <p id="booking.checkout">{{booking.endDate}}</p>
     </div>
     <div class="hotel-info-checkin">
       <p class="check"><b>Check-in</b></p>
-      <p>{{booking.startDate}}</p>
+      <p id="booking.checkin">{{booking.startDate}}</p>
     </div>
 
   </md-card>
