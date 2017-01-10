@@ -46,10 +46,18 @@ describe('Hotel Detail', function () {
 
 
   it('Should set the weather after API response.', () => {
-      page.navigateTo();
-      expect(page.getWeatherDescription()).toEqual(testData.weather[0].description);
-      expect(page.getWeatherHumidity()).toEqual(weather.main.humidity);
-      expect(page.getWeatherTemperature()).toEqual(weather.main.temp);
-      expect(page.getWeatherWindspeed()).toEqual(weather.wind.speed);
+    page.navigateTo();
+    page.getWeatherDescription().then(text => {
+      expect(text[0].includes('onbewolkt')).toEqual(true);
     });
+    page.getWeatherHumidity().then(text => {
+      expect(text[0].includes('31')).toEqual(true);
+    });
+    page.getWeatherTemperature().then(text => {
+      expect(text[0].includes('33.41')).toEqual(true);
+    });
+    page.getWeatherWindspeed().then(text => {
+      expect(text[0].includes('1.98')).toEqual(true);
+    });
+  });
 });
