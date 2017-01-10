@@ -35,17 +35,6 @@ describe('BookHotelComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should set the range to the previous month', () => {
-    component.setRange();
-    let range: Date = component.range;
-    expect(range.getMonth()).toEqual(new Date().getMonth() - 1);
-    if (range.getMonth() == 12) {
-      expect(range.getFullYear()).toEqual(new Date().getFullYear() - 1);
-    } else {
-      expect(range.getFullYear()).toEqual(new Date().getFullYear());
-    }
-  });
-
   it('should add a traveler', () => {
     component.pushTraveler();
     expect(component.travelers.length).toEqual(1);
