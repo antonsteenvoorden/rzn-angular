@@ -53,7 +53,7 @@ module.exports = function (config) {
 
 
     htmlReporter: {
-      outputFile: 'report/test/html-report/index.html',
+      outputFile: 'report/unittest/html-report/index.html',
       pageTitle: 'Unit Tests',
       subPageTitle: 'TravelPlanner',
       groupSuites: true,
