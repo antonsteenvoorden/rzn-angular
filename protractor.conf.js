@@ -23,15 +23,16 @@ exports.config = {
     }
   },
   useAllAngular2AppRoots: true,
-  beforeLaunch: function() {
+  beforeLaunch: function () {
     require('ts-node').register({
       project: 'e2e'
     });
   },
-  onPrepare: function() {
+  onPrepare: function () {
     jasmine.getEnv().addReporter(new SpecReporter());
     jasmine.getEnv().addReporter(new Jasmine2HtmlReporter({
-        savePath: './report/e2e/html-report'
+        savePath: './report/e2e/html-report',
+        fileName: 'index.html'
       })
     );
   }
