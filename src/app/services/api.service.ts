@@ -13,11 +13,13 @@ export class ApiService {
 
   getHeaders() {
     var headers = new Headers();
-    headers.append('Content-Type', 'application/x-www-form-urlencoded');
-    // headers.append('Content-Type', 'json/application');
+    // headers.append('Content-Type', 'application/x-www-form-urlencoded');
+    headers.append('Content-Type', 'application/json');
+    headers.append('Accept', 'application/json');
 
     if (localStorage.getItem("auth_token")) {
       let auth = "Basic " + localStorage.getItem("auth_token");
+      console.log(auth);
       headers.append("Authorization", auth);
     }
     return headers;
