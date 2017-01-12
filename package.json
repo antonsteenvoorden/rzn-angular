@@ -6,10 +6,14 @@
   "scripts": {
     "start": "ng serve",
     "lint": "tslint \"src/**/*.ts\"",
-    "test": "karma start --reporters html",
+    "test": "ng test --code-coverage & npm run remap-istanbul",
     "pree2e": "webdriver-manager update",
     "e2e": "protractor",
-    "build": "ng build -prod"
+    "build": "ng build -prod",
+    "remap-istanbul": "remap-istanbul -i ./coverage/coverage-final.json -o ./report/coverage/html-report -t html",
+    "coverage-report": "http-server -c-1 -o -p 9875 ./report/coverage/html-report",
+    "unittest-report": "http-server -c-1 -o -p 9876 ./report/unittest/html-report",
+    "e2e-report": "http-server -c-1 -o -p 9876 ./report/e2e/html-report"
   },
   "private": true,
   "dependencies": {
@@ -28,6 +32,7 @@
     "angular2-material-datepicker": "https://github.com/zaijacobs/Angular-2-Datepicker/tarball/master",
     "ng2-pagination": "^1.0.1",
     "ng2-validation": "^3.0.1",
+    "http-server": "^0.9.0",
     "rxjs": "5.0.0-beta.12",
     "ts-helpers": "^1.1.1",
     "zone.js": "^0.6.23"
@@ -42,10 +47,13 @@
     "karma": "1.2.0",
     "karma-chrome-launcher": "^2.0.0",
     "karma-cli": "^1.0.1",
+    "karma-coverage": "^1.1.1",
     "karma-htmlfile-reporter": "^0.3.4",
     "karma-jasmine": "^1.0.2",
     "karma-remap-istanbul": "^0.2.1",
     "protractor": "^4.0.9",
+    "protractor-jasmine2-html-reporter": "0.0.7",
+    "remap-istanbul": "^0.8.4",
     "ts-node": "1.2.1",
     "ts-promise": "^0.3.4",
     "tslint": "3.13.0",
