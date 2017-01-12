@@ -24,8 +24,10 @@ describe('Hotel Detail', function () {
 
   it('Should go to bookings', () => {
     page.navigateTo();
-    let url = browser.getCurrentUrl();
-    expect(url.includes('bookings')).toEqual(true)
+    browser.getCurrentUrl()
+      .then(url => {
+        expect(url.includes('bookings')).toEqual(true)
+      });
   });
 
   it('Should go to bookings and validate first booking', () => {

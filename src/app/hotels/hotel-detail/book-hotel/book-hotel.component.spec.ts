@@ -21,7 +21,8 @@ describe('BookHotelComponent', () => {
     let user: any = {
       firstName: 'Zai',
       lastName: 'Jacobs'
-    }
+    };
+    
     localStorage.setItem('user', JSON.stringify(user));
 
     fixture = TestBed.createComponent(BookHotelComponent);
