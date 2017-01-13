@@ -34,16 +34,16 @@ describe('Bookingpage', function () {
     page.navigateTo();
 
     page.getBookingId().then(id => {
-      expect(id.indexOf('2')).toBeGreaterThanOrEqual(0, 'booking id');
+      expect(id.indexOf('1')).toBeGreaterThanOrEqual(0, 'booking id');
     });
     page.getBookingCity().then(id => {
       expect(id.indexOf('Lisse')).toBeGreaterThanOrEqual(0, 'booking city');
     });
     page.getBookingNumberOfTravellers().then(id => {
-      expect(id.indexOf('2')).toBeGreaterThanOrEqual(0, 'number of travelers');
+      expect(id.indexOf('3')).toBeGreaterThanOrEqual(0, 'number of travelers');
     });
     page.getBookingPrice().then(id => {
-      expect(id.indexOf('10.5')).toBeGreaterThanOrEqual(0, 'price');
+      expect(id.indexOf('320')).toBeGreaterThanOrEqual(0, 'price');
     });
     page.getBookingCheckout().then(id => {
       expect(id.indexOf('10-01-2017')).toBeGreaterThanOrEqual(0, 'checkout');
