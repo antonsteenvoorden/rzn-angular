@@ -21,9 +21,7 @@ export class HotelDetailComponent implements OnInit {
 
   constructor(private route: ActivatedRoute,
               private router: Router,
-              private service: HotelsService,
-              private http: Http,
-              private configuration: Configuration) {
+              private service: HotelsService) {
     this.selectedCountry = null;
   }
 
@@ -47,7 +45,11 @@ export class HotelDetailComponent implements OnInit {
     // Pass along the hero id if available
     // so that the HeroList component can select that hero.
     if(this.selectedCountry != "undefined"){
-      this.router.navigate(['/hotels', {id: hotelId, country:this.hotel.country}]);
+      if(this.hotel){
+        this.router.navigate(['/hotels', {id: hotelId, country:this.hotel.country}]);
+      } else {
+        this.router.navigate(['/hotels']);
+      }
     }
     else {
       this.router.navigate(['/hotels']);

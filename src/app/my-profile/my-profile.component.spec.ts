@@ -26,8 +26,7 @@ describe('MyProfileComponent', () => {
     };
     TestBed.configureTestingModule({
       providers: [
-        {provide: Router, useValue: routerStub},
-        {provide: localStorage, useValue: localStorageStub}
+        {provide: Router, useValue: routerStub}
       ]
     });
   });
@@ -74,6 +73,7 @@ describe('MyProfileComponent', () => {
     };
 
     let sut = new LoggedInGuard(routerStub, userService);
+    sut.localStorage = localStorageStub;
 
     let tmp = sut.canActivate();
     expect(tmp).toEqual(true);
