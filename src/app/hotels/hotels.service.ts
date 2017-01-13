@@ -54,7 +54,7 @@ export class HotelsService {
   filterByQuery(listOfHotels, query) {
     let tmpHotels = [];
     for (let i = 0; i < listOfHotels.length; i++) {
-      let hotel = HOTELS[i];
+      let hotel = listOfHotels[i];
       if (hotel.country.includes(query) || hotel.description.includes(query)) {
         tmpHotels.push(hotel);
       }
