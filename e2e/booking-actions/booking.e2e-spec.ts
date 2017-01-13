@@ -3,7 +3,7 @@ import {MyProfilePage} from "../profile-actions/my-profile.po";
 import {BookingPage} from "./booking.po";
 import {browser} from "protractor/built/index";
 
-describe('Hotel Detail', function () {
+describe('Bookingpage', function () {
   let page:BookingPage;
   let loginPage:LoginPage;
   let myProfilePage:MyProfilePage;
@@ -26,7 +26,7 @@ describe('Hotel Detail', function () {
     page.navigateTo();
     browser.getCurrentUrl()
       .then(url => {
-        expect(url.includes('bookings')).toEqual(true)
+        expect(url.indexOf('bookings')).toBeGreaterThanOrEqual(0)
       });
   });
 
@@ -34,22 +34,22 @@ describe('Hotel Detail', function () {
     page.navigateTo();
 
     page.getBookingId().then(id => {
-      expect(id[0].includes('10')).toEqual(true, 'booking id');
+      expect(id.indexOf('1')).toBeGreaterThanOrEqual(0, 'booking id');
     });
     page.getBookingCity().then(id => {
-      expect(id[0].includes('Lisse')).toEqual(true, 'booking city');
+      expect(id.indexOf('Lisse')).toBeGreaterThanOrEqual(0, 'booking city');
     });
     page.getBookingNumberOfTravellers().then(id => {
-      expect(id[0].includes('2')).toEqual(true, 'number of travelers');
+      expect(id.indexOf('2')).toBeGreaterThanOrEqual(0, 'number of travelers');
     });
     page.getBookingPrice().then(id => {
-      expect(id[0].includes('10.5')).toEqual(true, 'price');
+      expect(id.indexOf('10.5')).toBeGreaterThanOrEqual(0, 'price');
     });
     page.getBookingCheckout().then(id => {
-      expect(id[0].includes('10-01-2017')).toEqual(true, 'checkout');
+      expect(id.indexOf('10-01-2017')).toBeGreaterThanOrEqual(0, 'checkout');
     });
     page.getBookingCheckin().then(id => {
-      expect(id[0].includes('01-01-2017')).toEqual(true, 'checkin');
+      expect(id.indexOf('01-01-2017')).toBeGreaterThanOrEqual(0, 'checkin');
     });
 
   });

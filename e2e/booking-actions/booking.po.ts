@@ -16,28 +16,28 @@ export class BookingPage {
   }
 
   getBookingId(){
-    let tmp = element.all(by.id("booking.id"));
+    let tmp = element(by.id("booking.id"));
     return tmp.getText();
   }
-  
+
   getBookingCity(){
-    let tmp = element.all(by.id("booking.city"));
+    let tmp = element(by.id("booking.city"));
     return tmp.getText();
-  }  
+  }
   getBookingNumberOfTravellers(){
-    let tmp = element.all(by.id("booking.numberOfTravellers"));
+    let tmp = element(by.id("booking.numberOfTravellers"));
     return tmp.getText();
-  }  
+  }
   getBookingPrice(){
-    let tmp = element.all(by.id("booking.price"));
+    let tmp = element(by.id("booking.price"));
     return tmp.getText();
   }
   getBookingCheckin(){
-    let tmp = element.all(by.id("booking.checkin"));
+    let tmp = element(by.id("booking.checkin"));
     return tmp.getText();
   }
   getBookingCheckout(){
-    let tmp = element.all(by.id("booking.checkout"));
+    let tmp = element(by.id("booking.checkout"));
     return tmp.getText();
   }
 

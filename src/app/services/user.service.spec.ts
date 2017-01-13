@@ -5,6 +5,7 @@ import {AppModule} from '../app.module';
 import {Router} from "@angular/router";
 import {Hotel} from "../models/hotel";
 import {ApiService} from "../services/api.service";
+import {UserService} from "./user.service";
 
 describe('Service: UserService', () => {
   let routerStub;
@@ -21,12 +22,13 @@ describe('Service: UserService', () => {
     TestBed.configureTestingModule({
       providers: [
         {provide: Router, useValue: routerStub},
-        {provide: ApiService, useValue: apiStub}
+        {provide: ApiService, useValue: apiStub},
+        UserService
       ]
     });
   });
 
-  it('should create', inject([ApiService], (service: ApiService) => {
+  it('should create', inject([UserService], (service: UserService) => {
     expect(service).toBeTruthy();
   }));
 

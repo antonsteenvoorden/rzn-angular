@@ -48,16 +48,16 @@ describe('Hotel Detail', function () {
   it('Should set the weather after API response.', () => {
     page.navigateTo();
     page.getWeatherDescription().then(text => {
-      expect(text[0].includes('onbewolkt')).toEqual(true);
+      expect(text[0].indexOf('onbewolkt')).toBeGreaterThanOrEqual(0);
     });
     page.getWeatherHumidity().then(text => {
-      expect(text[0].includes('31')).toEqual(true);
+      expect(text[0].indexOf('31')).toBeGreaterThanOrEqual(0);
     });
     page.getWeatherTemperature().then(text => {
-      expect(text[0].includes('33.41')).toEqual(true);
+      expect(text[0].indexOf('33.41')).toBeGreaterThanOrEqual(0);
     });
     page.getWeatherWindspeed().then(text => {
-      expect(text[0].includes('1.98')).toEqual(true);
+      expect(text[0].indexOf('1.98')).toBeGreaterThanOrEqual(0);
     });
   });
 });
