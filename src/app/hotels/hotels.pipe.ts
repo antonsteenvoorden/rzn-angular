@@ -12,7 +12,7 @@ export class HotelPipe {
     if (!hotels) {
       return;
     }
-    query = query.toLowerCase();
+    query = query.toLowerCase() || '';
 
     return hotels.filter(hotel => {
       return hotel.name.toLowerCase().includes(query)

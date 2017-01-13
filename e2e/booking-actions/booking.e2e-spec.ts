@@ -34,7 +34,7 @@ describe('Bookingpage', function () {
     page.navigateTo();
 
     page.getBookingId().then(id => {
-      expect(id.indexOf('1')).toBeGreaterThanOrEqual(0, 'booking id');
+      expect(id.indexOf('2')).toBeGreaterThanOrEqual(0, 'booking id');
     });
     page.getBookingCity().then(id => {
       expect(id.indexOf('Lisse')).toBeGreaterThanOrEqual(0, 'booking city');

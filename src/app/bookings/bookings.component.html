@@ -1,7 +1,7 @@
 <div class="main-content">
   <md-toolbar color="accent">Bookings</md-toolbar>
 
-  <md-card *ngFor="let booking of bookings | async | paginate: {itemsPerPage: 3, currentPage:page, id: '1'}"
+  <md-card *ngFor="let booking of bookings | async | paginate: {itemsPerPage: 3, currentPage:page, id:'1'}"
            class="register-card">
     <img class="img-box" md-card-image src="assets/hotel.jpg">
     <md-card-title class="title">{{booking.name}}</md-card-title>

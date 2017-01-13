@@ -23,7 +23,7 @@ describe('Pipe: Hotels', () => {
     let testData = [
       new Hotel(
         "1",
-        null,
+        "Nederland",
         "Nederland",
         "Nederland",
         "Nederland",
@@ -37,7 +37,7 @@ describe('Pipe: Hotels', () => {
       ),
       new Hotel(
         "2",
-        null,
+        "Zweden",
         "Zweden",
         "Zweden",
         "Zweden",

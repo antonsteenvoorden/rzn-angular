@@ -67,6 +67,7 @@ describe('MyProfileComponent', () => {
 
   it('should be allowed to navigate', () => {
     let userService: UserService;
+    localStorage.setItem('user', '{}');
     userService = new UserService(null, null);
     userService.isLoggedIn = function () {
       return true;
@@ -75,7 +76,8 @@ describe('MyProfileComponent', () => {
     let sut = new LoggedInGuard(routerStub, userService);
 
     let tmp = sut.canActivate();
-    expect(tmp).toEqual(false);
+    expect(tmp).toEqual(true);
+    localStorage.removeItem('user');
   });
 
 });
